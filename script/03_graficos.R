@@ -18,11 +18,14 @@
 #     aclara en el nombre del eje, no repetida en cada etiqueta;
 #   - todos llevan el mismo pie de fuente.
 #
-# Sobre los títulos. Los gráficos se exportan SIN título ni bajada: el título
-# lo pone la diapositiva, en posición y tamaño fijos, y así no queda duplicado.
-# Pero los textos se definen igual acá, en la tabla `textos`, por dos razones:
-# el script 05 los lee de ahí para armar las slides, y poniendo MOSTRAR_TITULOS
-# en TRUE se regeneran todos los gráficos con el título adentro, para usarlos
+# Sobre los títulos. Los gráficos se exportan sin el título afirmativo ni la
+# bajada: el título lo pone la diapositiva, en posición y tamaño fijos, y así
+# no queda duplicado. Lo que sí llevan adentro es su nombre descriptivo (qué
+# es la figura, no el hallazgo), que pone guardar() con MOSTRAR_NOMBRES
+# (script/00_tema.R) desde auxiliar/nombres_figuras.csv. Los títulos y bajadas
+# se definen igual acá, en la tabla `textos`, porque el script 05 los lee de
+# ahí; poniendo MOSTRAR_TITULOS en TRUE (y MOSTRAR_NOMBRES en FALSE) se
+# regeneran los gráficos con el título afirmativo adentro, para usarlos
 # sueltos fuera de la presentación.
 #
 # El tema y la paleta están en script/00_tema.R.

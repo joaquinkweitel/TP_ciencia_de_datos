@@ -41,6 +41,12 @@ fuente_titulo <- if (fuente_disponible("Georgia"))  "Georgia"  else ""
 
 theme_set(tema_tp())
 
+# Cada gráfico y tabla lleva arriba un nombre corto que dice qué es la figura
+# (no el hallazgo, que lo afirma el título de la diapositiva). Los nombres están
+# en auxiliar/nombres_figuras.csv; guardar() y guardar_tabla() los ponen y se
+# frenan si una figura no tiene nombre. En FALSE, las figuras salen sin nombre.
+MOSTRAR_NOMBRES <- TRUE
+
 
 # --- Formato de números a la argentina -------------------------------------
 # Punto para los miles, coma para los decimales. Los precios con prefijo US$.

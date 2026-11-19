@@ -54,6 +54,13 @@ Con la base de análisis armamos los gráficos y las tablas descriptivas.
 - Uno comunicativo: a igual departamento, en Puerto Madero se pide 3,0 veces
   lo que en Villa Lugano.
 
+**Entrega final: herramienta de análisis económico (script 12).** Un índice
+de concentración de los avisos publicados entre barrios: Herfindahl-Hirschman
+con su número equivalente de barrios, curva de Lorenz y Gini. Mide la
+concentración de la oferta publicada, no la del stock de viviendas, y
+cuantifica por qué los modelos se restringen a los 42 barrios con al menos 100
+avisos.
+
 Todos los números de los títulos, los textos y las anotaciones salen de los
 scripts: ninguno está escrito a mano.
 
@@ -65,15 +72,18 @@ TP_ciencia_de_datos/
 ├── raw/                    datos originales, tal como se descargaron
 │   └── base_ventas_caba.csv
 ├── auxiliar/               archivos de apoyo
-│   └── diccionario_variables.csv
+│   ├── diccionario_variables.csv
+│   └── nombres_figuras.csv        (el nombre que lleva cada figura adentro)
 ├── input/                  base procesada, lista para el análisis
 │   └── base_analisis.csv          (la arma el 02 y le agrega marcas el 06)
 ├── output/
 │   ├── tablas/             tablas de resultados: CSV, tablas como imagen
 │   │                       (t01 a t18), registros de diagnóstico (.txt),
 │   │                       números clave (0X_numeros.csv) y textos
-│   └── graficos/           gráficos: PNG de las instancias 1 y 2 (g1 a g18)
-│                           y los dos JPG de la instancia 3
+│   └── graficos/           gráficos: PNG de las instancias 1 y 2 (g1 a g18), la curva de Lorenz (g19),
+│                           la prima de cada barrio contra su latitud (g20)
+│                           y los dos JPG de la instancia 3, con su versión
+│                           para diapositiva (*_diapositiva.jpg)
 ├── script/                 scripts de R, numerados por orden de ejecución
 ├── utils/                  funciones propias, una por archivo
 ├── TP_ciencia_de_datos.Rproj
@@ -125,9 +135,11 @@ Rscript script/08_regresion.R
 Rscript script/09_kmeans.R
 Rscript script/10_textos.R
 Rscript script/11_instancia3.R
+Rscript script/12_concentracion.R
+Rscript script/13_numeros_presentacion.R
 ```
 
-El orden importa en cuatro lugares:
+El orden importa en estos lugares:
 
 - El **02** arma `input/base_analisis.csv` desde `raw/`, y el **06** le
   agrega las marcas de atípicos y la vuelve a guardar. Del 07 en adelante
@@ -136,6 +148,12 @@ El orden importa en cuatro lugares:
 - El **10** lee los números que guardan el 03 y el 06 a 09.
 - El **11** usa las tablas del **09** y vuelve a correr el **08** por dentro
   para tomar su muestra y su modelo.
+- El **12** también vuelve a correr el **08** por dentro: toma de ahí los
+  seis barrios con menos de 100 avisos, la muestra de 42 barrios y el modelo
+  del paso 3.
+- El **13** lee los números que guardan del 02 al 12, verifica que sean
+  coherentes entre sí y con los de la sección 1 de este README, y los junta
+  por diapositiva.
 
 `script/00_tema.R` no se corre suelto: lo llaman los scripts que hacen
 gráficos o tablas, y es el que carga las funciones de `utils/`.
@@ -161,6 +179,8 @@ kmeans con 50 arranques, la estadística gap y la estabilidad por remuestreo).
 | `09_kmeans.R` | Kmeans (k = 3) sin variables de ubicación, comparación con PAM, estabilidad y reparto de los grupos por barrio. | `tablas/09_*`, `graficos/g16` a `g18`, `tablas/t16` a `t18` |
 | `10_textos.R` | Los textos de cada diapositiva de la instancia 2, con los números leídos de lo que guardaron los scripts anteriores. | `tablas/textos_instancia2.md` |
 | `11_instancia3.R` | Los dos gráficos de la instancia 3: el jerárquico de barrios (exploratorio) y la brecha entre Puerto Madero y Villa Lugano (comunicativo). | `graficos/grupo_08_exploratorio.jpg`, `graficos/grupo_08_comunicativo.jpg`, `tablas/11_*` |
+| `12_concentracion.R` | Herramienta de análisis económico: concentración de los avisos entre barrios (Herfindahl-Hirschman, número equivalente, Lorenz y Gini), la comparación entre 48 y 42 barrios, y el error estándar del coeficiente de cada barrio según sus avisos. | `graficos/g19_lorenz_barrios.png`, `tablas/12_*` |
+| `13_numeros_presentacion.R` | Todos los números de la presentación final, verificados y con su fuente, agrupados por diapositiva. Calcula además la correlación entre la prima de cada barrio y su latitud, con su gráfico. | `tablas/13_numeros_diapositivas.csv`, `tablas/13_numeros.csv`, `graficos/g20_prima_latitud.png` |
 
 
 ## 7. Funciones propias (`utils/`)
@@ -185,3 +205,9 @@ Una función por archivo. Las carga `script/00_tema.R`.
 | `ari.R` | Índice de Rand ajustado entre dos particiones. |
 | `pintar.R` | Pinta una palabra de un color dentro de un título con formato. |
 | `segmentos_dendro.R` | Las coordenadas de un dendrograma, para dibujarlo con ggplot. |
+| `hhi.R` | Índice de Herfindahl-Hirschman de un vector de cantidades. |
+| `hhi_normalizado.R` | El HHI en una escala de 0 a 1 que no depende de cuántas unidades hay. |
+| `curva_lorenz.R` | Los puntos de la curva de Lorenz. |
+| `gini.R` | Coeficiente de Gini, a partir de la curva de Lorenz. |
+| `nombre_figura.R` | El nombre descriptivo de una figura, desde `auxiliar/nombres_figuras.csv`. Se frena si no tiene. |
+| `poner_nombre.R` | Pone ese nombre arriba de un gráfico o una tabla. Lo usan `guardar()` y `guardar_tabla()` cuando `MOSTRAR_NOMBRES` es `TRUE`. |

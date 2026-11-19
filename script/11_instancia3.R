@@ -262,6 +262,17 @@ exploratorio <- (g_dendro + g_barras + plot_layout(widths = c(1.3, 2.3))) +
 
 guardar_jpg(exploratorio, "grupo_08_exploratorio.jpg", alto_cm = 27)
 
+# Versión para la diapositiva de la presentación final: el nombre descriptivo
+# de la figura (auxiliar/nombres_figuras.csv) en lugar del título afirmativo,
+# sin bajada (la pone la diapositiva) y con la misma nota de fuente. El JPG de
+# la entrega de visualizaciones, el de arriba, no cambia.
+exploratorio_diapo <- (g_dendro + g_barras + plot_layout(widths = c(1.3, 2.3))) +
+  # Cortado a 50 caracteres: a 80 quedaba una sola palabra en la segunda línea.
+  plot_annotation(title = titulo(nombre_figura("grupo_08_exploratorio_diapositiva.jpg"), 50),
+                  caption = pie(fuente_expl, 150),
+                  theme = theme(plot.background = element_rect(fill = colores$fondo, color = NA)))
+guardar_jpg(exploratorio_diapo, "grupo_08_exploratorio_diapositiva.jpg", alto_cm = 27)
+
 
 # =============================================================================
 # 2. COMUNICATIVO: A IGUAL DEPARTAMENTO, CUÁNTO MUEVE EL BARRIO EL PRECIO
@@ -441,6 +452,17 @@ comunicativo <- ggplot() +
                                               hjust = 0, lineheight = 1.1, margin = margin(b = 4)))
 
 guardar_jpg(comunicativo, "grupo_08_comunicativo.jpg", alto_cm = 17)
+
+# Versión para la diapositiva: el nombre descriptivo en lugar del título, con
+# los dos barrios pintados del color de su serie (es la única clave de colores
+# del gráfico, porque la bajada no los explica), sin bajada y con la fuente.
+nombre_com_md <- nombre_figura("grupo_08_comunicativo_diapositiva.jpg")
+stopifnot(str_detect(nombre_com_md, fixed(barrio_alto)), str_detect(nombre_com_md, fixed(barrio_bajo)))
+nombre_com_md <- nombre_com_md |>
+  str_replace(fixed(barrio_alto), pintar(barrio_alto, col_barrio[[barrio_alto]])) |>
+  str_replace(fixed(barrio_bajo), pintar(barrio_bajo, col_barrio[[barrio_bajo]]))
+comunicativo_diapo <- comunicativo + labs(title = nombre_com_md, subtitle = NULL)
+guardar_jpg(comunicativo_diapo, "grupo_08_comunicativo_diapositiva.jpg", alto_cm = 17)
 
 
 # =============================================================================

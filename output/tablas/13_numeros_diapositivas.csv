@@ -1,0 +1,285 @@
+diapositiva,clave,valor,fuente
+2,avisos_crudo,40.168,06_numeros: n_crudo
+2,periodo,noviembre de 2024,04_ficha_base: Período
+2,barrios,48,12_numeros: n_barrios
+2,comunas,15,04_ficha_base: Cobertura
+2,variables_originales,45,04_ficha_base: Variables
+2,superficie_max_m2,400,04_evidencia_recorte
+2,precio_max_usd,2.900.000,04_evidencia_recorte
+2,geocod_min,"80,03",04_evidencia_recorte
+3,variables_originales,45,04_ficha_base: Variables
+3,variables_usadas,18,04_variables_vivienda + 04_variables_ubicacion
+3,variables_vivienda,9,04_variables_vivienda
+3,variables_ubicacion,9,04_variables_ubicacion
+3,conjuntos_republicados,683,02_clasificacion_repetidos
+3,copias_sacadas,863,02_clasificacion_repetidos
+3,conjuntos_unidades_distintas,104,02_clasificacion_repetidos
+3,avisos_crudo,40.168,06_numeros: n_crudo
+3,avisos_base,39.305,06_numeros: n_base
+3,mediana_pm2_crudo,2.687,02_efecto_deduplicacion
+3,mediana_pm2_base,2.692,02_efecto_deduplicacion
+4,barrios_mitad,7,12_numeros: k50
+4,pct_barrios_mitad,"50,7",12_numeros: part_k50
+4,barrios,48,12_numeros: n_barrios
+4,barrios_chicos,6,12_numeros: n_chicos
+4,numero_equivalente,"17,7",12_numeros: n_equivalente
+4,hhi_10000,564,12_numeros: hhi_10000
+4,hhi_minimo_10000,208,12_numeros: hhi_min
+4,gini,"0,56",12_numeros: gini
+4,cr5_pct,"42,3",12_numeros: cr5
+4,cr5_parejo_pct,"10,4",12_numeros: cr5_iguales
+4,top5,"Palermo, Belgrano, Caballito, Recoleta, Almagro",12_numeros: top5
+4,palermo_pct,"15,6",12_numeros: palermo
+4,barrios_modelos,42,08_numeros: n_barrios
+4,pct_chicos_1dec,"0,9",12_numeros: part_chicos
+4,pct_chicos_2dec,"0,94",12_numeros: part_chicos
+4,pct_chicos_parejo,"12,5",12_numeros: n_chicos / n_barrios
+4,barrios_chicos_nombres,"Villa Real, Villa Soldati, Villa Riachuelo, Paternal, Versalles, Nueva Pompeya",12_numeros: chicos
+4,avisos_chicos,370,12_numeros: avisos_chicos
+4,avisos_modelos,38.895,12_numeros: n_avisos_42
+4,no_departamentos,40,08_numeros: n_no_depto
+4,hhi_10000_42,574,12_numeros: hhi_10000_42
+4,numero_equivalente_42,"17,4",12_numeros: n_equivalente_42
+4,gini_42,"0,52",12_numeros: gini_42
+4,ee_correlacion_log,"-0,92",12_numeros: ee_cor
+4,ee_barrio_chico,Villa Lugano,12_numeros: ee_barrio_chico
+4,ee_avisos_chico,148,12_numeros: ee_avisos_chico
+4,ee_chico,"0,0249",12_numeros: ee_chico
+4,ee_barrio_grande,Palermo,12_numeros: ee_barrio_grande
+4,ee_avisos_grande,6.116,12_numeros: ee_avisos_grande
+4,ee_grande,"0,0073",12_numeros: ee_grande
+4,ee_razon,"3,4",12_numeros: ee_chico / ee_grande
+4,base_regresion,Balvanera,08_prima_superficie_barrio (prima 0)
+5,na_inmobiliaria,28.745,06_numeros: na_inmo
+5,pct_na_inmobiliaria,"73,1",06_numeros: pct_na_inmo
+5,na_antiguedad,4.588,06_numeros: na_antig
+5,pct_na_antiguedad,"11,7",06_numeros: pct_na_antig
+5,filas_completas,10.560,06_numeros: filas_completas
+5,avisos_base,39.305,06_numeros: n_base
+5,barrios_100,42,06_numeros: part_n_barrios
+5,particulares_max_pct,92,06_numeros: part_max
+5,particulares_max_barrio,Mataderos,06_numeros: part_max_barrio
+5,particulares_min_pct,62,06_numeros: part_min
+5,particulares_min_barrio,Belgrano,06_numeros: part_min_barrio
+5,particulares_correlacion,"-0,36",06_numeros: part_pearson
+5,pct_sin_dato_publicacion,"89,4",06_numeros: pct_pubrec
+6,seis_min,291,06_numeros: mínimo de las seis combinaciones
+6,seis_max,3.884,06_numeros: máximo de las seis combinaciones
+6,marcados_max,3.884,06_numeros: marcados_max
+6,marcados_alguna,3.889,06_numeros: marcados_alguna
+6,z_original,842,06_numeros: z_orig
+6,zrob_original,3.884,06_numeros: zrob_orig
+6,z_log,291,06_numeros: z_log
+6,iqr_log,723,06_numeros: iqr_log
+6,pm_top100,47,06_numeros: pm_top100
+6,no_departamentos,40,06_numeros: no_depto
+6,no_departamentos_tipos,"24 oficinas, 8 locales, 4 terrenos, 3 cocheras, 1 depósito",06_numeros: no_depto_tipos
+6,dist_asimetria,"0,24",06_numeros: dist_asim_orig
+6,dist_iqr_original,0,06_numeros: dist_iqr_orig
+6,dist_iqr_log,654,06_numeros: dist_iqr_log
+6,dist_limite_m,735,06_numeros: dist_log_lim_m
+6,sacados_ric,3.287,06_numeros: sacados_ric
+6,p95_base,537.900,06_numeros: p95_base
+6,p95_sin_ric,329.000,06_numeros: p95_sin_ric
+6,winsor_sobre_p99,379,08_numeros: w_sobre_p99
+6,winsor_p99,990.000,08_numeros: w_p99
+6,winsor_pm,66,08_numeros: w_pm_sobre_p99
+6,winsor_prima_pm,"129,7",08_numeros: w_prima_pm (respecto de la base)
+6,winsor_prima_pm_w,"124,0",08_numeros: w_prima_pm_w (respecto de la base)
+6,elasticidad,"0,954",08_numeros: b4
+6,winsor_elasticidad,"0,936",08_numeros: w_b4
+6,base_regresion,Balvanera,08_prima_superficie_barrio (prima 0)
+7,titulo_g3,"A igual distancia del centro, el norte es entre un 35% y un 45% más caro",03_titulos_graficos: g3
+7,norte_mas_caro_min,35%,03_titulos_graficos: g3
+7,norte_mas_caro_max,45%,03_titulos_graficos: g3
+7,mediana_precio,140.000,04_descriptivas
+7,media_precio,198.218,06_numeros: media_base
+7,cor_pm2_distancia,"0,07",04_correlaciones
+7,cor_pm2_latitud,"0,49",04_correlaciones
+7,tramo_max,3 a 6 km,03_numeros: tramo_max_norte (= tramo_max_sur)
+7,tramo_min,Hasta 3 km,03_numeros: tramo_min_norte (= tramo_min_sur)
+7,pm2_cerca_norte,2.875,03_numeros: min_cerca_norte
+7,pm2_cerca_sur,2.089,03_numeros: min_cerca_sur
+7,brecha_estrenar,"1,33",03_numeros: brecha_estrenar
+7,brecha_hasta20,"1,32",03_numeros: brecha_hasta20
+7,brecha_20a50,"1,40",03_numeros: brecha_20a50
+7,brecha_mas50,"1,47",03_numeros: brecha_mas50
+7,pm2_entre_barrios_pct,"36,8",04_varianza_barrios
+7,pm2_dentro_barrios_pct,"63,2",04_varianza_barrios
+8,pc1_pct,"36,1",07_numeros: pc1
+8,pc2_pct,"16,7",07_numeros: pc2
+8,obelisco_pc1,"0,88",07_numeros: obelisco_pc1
+8,pm2_pc1,"0,123",07_numeros: pm2_pc1
+8,pm2_pc2,"0,184",07_numeros: pm2_pc2
+8,lat_pc1,"0,119",07_numeros: lat_pc1
+8,lat_pc2,"-0,024",07_numeros: lat_pc2
+8,cos2_pm2_pct,"4,9",07_numeros: pm2_pc1² + pm2_pc2²
+8,cos2_lat_pct,"1,5",07_numeros: lat_pc1² + lat_pc2²
+8,tope_pm2_pct,5,07_numeros: cota redonda de cos2_pm2
+8,tope_lat_pct,2,07_numeros: cota redonda de cos2_lat
+9,avisos_modelos,38.895,08_numeros: n_mod
+9,barrios_modelos,42,08_numeros: n_barrios
+9,base_regresion,Balvanera,08_prima_superficie_barrio (prima 0)
+9,F_barrio,"651,18",08_numeros: F_h0
+9,gl1,41,08_numeros: gl1_h0
+9,gl2,38.847,08_numeros: gl2_h0
+9,r2_paso2_4dec,"0,7919",08_numeros: r2_2
+9,r2_paso3_4dec,"0,8764",08_numeros: r2_3
+9,delta_r2_barrio_puntos,"8,45","08_numeros: r2_3 − r2_2, con cuatro decimales"
+10,pct_10_mas,"9,5",08_numeros: pct_10mas
+10,r2_paso1_3dec,"0,700",08_numeros: r2_1
+10,r2_paso1_4dec,"0,6998",08_numeros: r2_1
+10,r2_paso2_3dec,"0,792",08_numeros: r2_2
+10,r2_paso2_4dec,"0,7919",08_numeros: r2_2
+10,r2_paso3_3dec,"0,876",08_numeros: r2_3
+10,r2_paso3_4dec,"0,8764",08_numeros: r2_3
+10,r2_paso4_3dec,"0,879",08_numeros: r2_4
+10,r2_paso4_4dec,"0,8787",08_numeros: r2_4
+10,r2_ajustado_paso4,"0,8786",08_numeros: r2aj_4
+10,elasticidad,"0,954",08_numeros: b4
+10,categorias_barrio,41,08_numeros: gl1_h0
+10,base_regresion,Balvanera,08_prima_superficie_barrio (prima 0)
+11,b_paso1,"1,038",08_numeros: b1
+11,b_paso2,"1,124",08_numeros: b2
+11,b_paso3,"0,959",08_numeros: b3
+11,aporte_ambientes,"+0,133",08_numeros: amb_aporte
+11,aporte_banos,"-0,108",08_numeros: banos_aporte
+11,aporte_barrio,"-0,165",08_numeros: barrio_aporte
+11,cor_ambientes_m2,"0,88",08_numeros: cor_amb_m2
+11,cor_grafico,"0,79",08_numeros: cor_graf
+11,cor_condicional,"0,83",08_numeros: cor_cond
+11,cor_tercil_caro,"0,75",08_numeros: cor_tercil_caro
+11,cor_tercil_barato,"-0,12",08_numeros: cor_tercil_barato
+11,cor_sin_pm,"0,66",08_numeros: cor_sin_pm
+11,ambientes_paso2,"-0,067",08_numeros: amb_2
+11,ambientes_paso3,"-0,002",08_numeros: amb_3
+11,ambientes_p_paso3,"0,48",08_numeros: amb_p3
+11,base_regresion,Balvanera,08_prima_superficie_barrio (prima 0)
+12,dr2_superficie_precio,"10,2",08_numeros: dr2_sup_p (en puntos)
+12,dr2_barrio_precio,"8,1",08_numeros: dr2_bar_p (en puntos)
+12,dr2_barrio_pm2,"26,7",08_numeros: dr2_bar_m2 (en puntos)
+12,dr2_superficie_pm2,"0,08",08_numeros: dr2_sup_m2 (en puntos)
+12,F_superficie_pm2,"52,8",08_numeros: F_sup_m2
+12,F_superficie_gl1,1,08_numeros: F_sup_m2_gl1
+12,F_superficie_gl2,38.845,08_numeros: F_sup_m2_gl2
+12,caida_scr_barrio,1.367,08_numeros: scr_bar
+12,avisos_modelos,38.895,08_numeros: n_mod
+13,r2_barrio_3dec,"0,879",08_numeros: r2_4
+13,r2_latitud_3dec,"0,842",08_numeros: r2_lat
+13,r2_barrio_4dec,"0,8787",08_numeros: r2_4
+13,r2_latitud_4dec,"0,8424",08_numeros: r2_lat
+13,categorias_barrio,41,08_numeros: gl1_h0
+13,latitud_km_pct_1dec,"5,1",08_numeros: lat_km_pct
+13,latitud_km_pct_2dec,"5,05",08_numeros: lat_km_pct
+13,barrio_prima_max,Puerto Madero,08_numeros: prima_max_barrio
+13,prima_max_pct,"129,7",08_numeros: prima_max_pct (respecto de la base)
+13,base_regresion,Balvanera,08_prima_superficie_barrio (prima 0)
+13,pm_pct_norte,0,13_numeros: pm_pct_norte
+13,cor_prima_latitud,"0,67",13_numeros: cor_prima_lat
+13,cor_prima_latitud_sin_pm,"0,77",13_numeros: cor_prima_lat_sin_pm
+13,r2_prima_latitud,"0,45",13_numeros: r2_prima_lat
+14,reset,294,08_numeros: reset
+14,reset_cuadratico,206,08_numeros: reset_q
+14,avisos_modelos,38.895,08_numeros: n_mod
+14,elasticidad_m2_chico,35,08_numeros: elast_*
+14,elasticidad_m2_grande,150,08_numeros: elast_*
+14,elasticidad_chico,"0,90",08_numeros: elast_35
+14,elasticidad_grande,"1,03",08_numeros: elast_150
+14,F_barrio,651,08_numeros: F_h0
+14,F_barrio_cuadratico,636,08_numeros: F_h0_q
+14,dr2_superficie_pm2_cuadratico,"0,26",08_numeros: dr2_sup_m2_q (en puntos)
+14,breusch_pagan,"1.823,4",08_numeros: bp
+14,cook_n,2.073,08_numeros: cook_n
+14,cook_pct,"5,3",08_numeros: cook_pct
+14,elasticidad,"0,954",08_numeros: b4
+14,elasticidad_sin_cook,"0,938",08_numeros: b4_sin
+14,prima_pm_con,"129,7",08_numeros: pm_con (respecto de la base)
+14,prima_pm_sin,"138,1",08_numeros: pm_sin (respecto de la base)
+14,brecha_con,"2,60",08_numeros: brecha_con
+14,brecha_sin,"2,71",08_numeros: brecha_sin
+14,gvif_max,"4,95",08_numeros: gvif_max
+14,r2_distancia_barrio_pct,"95,9",08_numeros: r2_dist_barrio
+14,avisos_chicos,370,08_numeros: n_chicos
+14,barrios_chicos,6,08_numeros: n_barrios_chicos
+14,base_regresion,Balvanera,08_prima_superficie_barrio (prima 0)
+15,k_silueta,2,09_numeros: k_sil
+15,k_elegido,3,09_numeros: K
+15,silueta_k_silueta,"0,36",09_numeros: silueta_k2
+15,silueta_k_elegido,"0,34",09_numeros: silueta
+15,gap_empate,1,09_numeros: gap_empate (1 = el gap no distingue)
+16,grupo1_pct_0dec,35,09_perfiles: pct
+16,grupo1_pct_1dec,"35,4",09_perfiles: pct
+16,grupo1_pm2,2.000,09_perfiles: precio_m2
+16,grupo1_m2,58,09_perfiles: m2
+16,grupo1_pct_estrenar,"0,5",09_perfiles: pct_estrenar
+16,grupo1_pct_mas50,"30,7",09_perfiles: pct_mas50
+16,grupo1_dist_km,"4,6",09_perfiles: dist_km
+16,grupo1_pct_norte,35,09_perfiles: pct_norte
+16,grupo2_pct_0dec,46,09_perfiles: pct
+16,grupo2_pct_1dec,"46,2",09_perfiles: pct
+16,grupo2_pm2,3.005,09_perfiles: precio_m2
+16,grupo2_m2,42,09_perfiles: m2
+16,grupo2_pct_estrenar,"66,7",09_perfiles: pct_estrenar
+16,grupo2_pct_mas50,"0,0",09_perfiles: pct_mas50
+16,grupo2_dist_km,"6,5",09_perfiles: dist_km
+16,grupo2_pct_norte,55,09_perfiles: pct_norte
+16,grupo3_pct_0dec,18,09_perfiles: pct
+16,grupo3_pct_1dec,"18,5",09_perfiles: pct
+16,grupo3_pm2,3.607,09_perfiles: precio_m2
+16,grupo3_m2,106,09_perfiles: m2
+16,grupo3_pct_estrenar,"41,6",09_perfiles: pct_estrenar
+16,grupo3_pct_mas50,"4,6",09_perfiles: pct_mas50
+16,grupo3_dist_km,"6,0",09_perfiles: dist_km
+16,grupo3_pct_norte,69,09_perfiles: pct_norte
+16,tramo_cercano,Hasta 3 km,03_numeros: tramo_min_norte
+16,pct_mas50_cerca,"26,6",03_numeros: pct_mas50_cerca
+16,pct_mas50_resto_max,"10,3",03_numeros: pct_mas50_resto_max
+16,ari_barrio,"0,007",09_comparacion_ari
+16,ari_comuna,"0,013",09_comparacion_ari
+16,ari_mitad,"0,036",09_comparacion_ari
+16,comunas,15,09_numeros: n_comunas
+16,barrios_con_los_tres,42,09_numeros: barrios_todos
+16,pam_pct_igual,"90,6",09_numeros: pct_igual_pam
+16,ari_pam,"0,74",09_comparacion_ari
+16,extremos,240,09_numeros: n_extremos
+16,ari_sin_extremos,"0,88",09_comparacion_ari
+16,silueta,"0,34",09_numeros: silueta
+16,ari_sin_estandarizar,"0,44",09_comparacion_ari
+17,grupo_viejo_barrios,22,11_numeros: grupo_viejo_barrios
+17,grupo_viejo_sur,20,11_numeros: grupo_viejo_sur
+17,grupo_otro_barrios,20,11_numeros: grupo_otro_barrios
+17,grupo_otro_norte,12,11_numeros: grupo_otro_norte
+17,barrios_modelos,42,08_numeros: n_barrios
+17,ari_mitad,"0,26",11_numeros: ari_mitad
+17,p_permutacion,"0,0006",11_numeros: p_perm
+17,ari_comuna,"0,06",11_numeros: ari_comuna
+17,ari_hellinger,"0,50",11_numeros: ari_hellinger
+17,tamanos_promedio_completo,41 / 1,11_numeros: tam_promedio
+17,ari_kmeans_mitad,"0,036",09_comparacion_ari
+17,barrio_solo_con_k3,Puerto Madero,11_numeros: barrio_alto
+18,escalon1_crudo,"3,8",09_numeros: rango_total
+18,escalon2_igual_vivienda,"3,0",08_numeros: brecha_p3
+18,escalon2_barrios,Puerto Madero contra Villa Lugano,"08_numeros: p3_max_barrio, p3_min_barrio"
+18,escalon3_con_entorno,"2,6",08_numeros: brecha_extremos
+18,escalon3_barrios,Puerto Madero contra Boca,"08_numeros: prima_max_barrio, prima_min_barrio"
+18,kmeans_piso_min,"2,0",09_dentro_grupo: mínimo del rango por tipo
+18,kmeans_piso_max,"2,7",09_dentro_grupo: máximo del rango por tipo
+18,avisos_modelos,38.895,08_numeros: n_mod
+18,base_comunicativo,Villa Lugano,11_numeros: referencia_com
+18,barrio_alto,Puerto Madero,11_numeros: barrio_alto
+18,prima_alto_pct_0dec,197,11_numeros: prima_alto_pct (respecto de Villa Lugano)
+18,prima_alto_pct_1dec,"196,5",11_numeros: prima_alto_pct (respecto de Villa Lugano)
+18,brecha_grafico,"3,0",11_numeros: brecha
+18,m2_mediana,53,11_numeros: m2_ref
+18,precio_alto,272.575,11_numeros: p_alto
+18,precio_bajo,91.918,11_numeros: p_bajo
+18,base_regresion,Balvanera,08_prima_superficie_barrio (prima 0)
+18,prima_recoleta_p3,48,08_prima_superficie_barrio: Recoleta (respecto de la base)
+18,recoleta_pct_grupo_viejo,"48,5",09_ejemplo_recoleta
+18,recoleta_pm2_grupo_viejo,2.442,09_ejemplo_recoleta
+18,base_pm2_grupo_viejo,1.635,09_ejemplo_recoleta
+19,brecha_igual_vivienda,"3,0",08_numeros: brecha_p3
+19,dr2_superficie_pm2,"0,08",08_numeros: dr2_sup_m2 (en puntos)
+19,dr2_barrio_pm2,"26,7",08_numeros: dr2_bar_m2 (en puntos)
+19,pm2_dentro_barrios_pct,"63,2",04_varianza_barrios
+19,r2_prima_latitud,"0,45",13_numeros: r2_prima_lat

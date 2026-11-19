@@ -1,0 +1,37 @@
+nombre,valor
+n_avisos,39305
+n_barrios,48
+hhi,0.0563518606853745
+hhi_10000,563.518606853745
+hhi_min,0.0208333333333333
+n_equivalente,17.7456429625852
+hhi_normalizado,0.036274240699957
+gini,0.56457670779799
+gini_max,0.979166666666667
+cr5,0.423075944536319
+top5,"Palermo, Belgrano, Caballito, Recoleta, Almagro"
+cr5_iguales,0.104166666666667
+palermo,0.155705380994784
+k50,7
+part_k50,0.507289148963236
+n_chicos,6
+avisos_chicos,370
+part_chicos,0.00941356061569775
+chicos,"Villa Real, Villa Soldati, Villa Riachuelo, Paternal, Versalles, Nueva Pompeya"
+min_chicos,39
+n_avisos_42,38895
+hhi_10000_42,574.246322363215
+n_equivalente_42,17.4141298090455
+hhi_normalizado_42,0.0344349891201343
+gini_42,0.517767003960602
+cr5_42,0.427175729528217
+ee_pendiente,-0.276647695396428
+ee_r2,0.844370877161606
+ee_cor,-0.918896554113468
+ee_spearman,-0.939675073847476
+ee_barrio_chico,Villa Lugano
+ee_avisos_chico,148
+ee_chico,0.0249478598447148
+ee_barrio_grande,Palermo
+ee_avisos_grande,6116
+ee_grande,0.00733618416612868

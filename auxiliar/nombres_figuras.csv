@@ -1,0 +1,42 @@
+archivo,nombre
+g1_mapa_precio_m2.png,Precio por m² mediano en celdas de unos 200 metros
+g2_ranking_barrios.png,Precio por m² mediano por barrio
+g3_norte_sur_distancia.png,"Precio por m² mediano según la distancia al Obelisco, por mitad de la ciudad"
+g4_superficie_precio.png,Precio publicado y superficie cubierta de cada aviso
+g5_antiguedad_solapada.png,Años que cubre cada categoría de antigüedad del portal
+g6_antiguedad_mitad.png,"Precio por m² mediano según la antigüedad, por mitad de la ciudad"
+g7_distribucion_precio.png,Distribución del precio publicado
+g8_superficie.png,Distribución de la superficie cubierta
+g09a_boxplot_precio_original.png,Precio publicado: diagrama de caja en escala original
+g09b_boxplot_precio_log.png,Precio publicado: diagrama de caja en escala logarítmica
+g10_tres_reglas.png,Avisos marcados por cada combinación de regla y escala
+g11_particulares_por_barrio.png,Participación de particulares y precio por m² de cada barrio
+g12_correlaciones_cercania.png,Correlaciones entre las variables de cercanía
+g13_pca_cercania.png,Círculo de correlaciones del PCA de las variables de cercanía
+g14_avisos_por_barrio.png,Avisos por barrio
+g15_prima_superficie_barrio.png,Prima de cada barrio y superficie promedio de sus avisos
+g16_criterios_k.png,"Codo, silueta y gap según la cantidad de grupos"
+g17_grupos_pca.png,Los tres tipos de departamento en el plano del PCA
+g18_barrios_grupos.png,Composición de cada barrio según los tres tipos de departamento
+g19_lorenz_barrios.png,Curva de Lorenz de los avisos por barrio
+g20_prima_latitud.png,Prima de cada barrio y latitud mediana de sus avisos
+t01_faltantes.png,Variables con datos faltantes
+t02_tres_reglas.png,"Avisos marcados como atípicos, por regla, escala y variable"
+t03_impacto_estrategias.png,Qué le pasa a la base con cada estrategia para los atípicos
+t04_no_departamentos.png,Avisos que no son departamentos
+t05_descriptivas_vivienda.png,Estadísticas descriptivas de las variables de la vivienda
+t06_descriptivas_entorno.png,Estadísticas descriptivas de las variables de entorno
+t07_avisos_por_barrio.png,"Avisos por barrio, con su porcentaje"
+t08_pca_cargas.png,Cargas del PCA de las variables de cercanía
+t09_frecuencias_categoricas.png,Frecuencias de las variables categóricas
+t10_regresion_pasos.png,Regresión del log(precio): los cuatro pasos y el modelo con latitud
+t11_sesgo_omitida.png,Cambio del coeficiente de la superficie en cada paso
+t12_identidad_aporte.png,"Aporte de cada bloque al R², sobre el precio y el precio por m²"
+t13_supuestos.png,Verificación de supuestos del modelo completo
+t14_primas_barrio.png,Prima de cada barrio respecto de Balvanera
+t15_cook.png,Coeficientes con y sin los avisos influyentes
+t16_perfiles_grupos.png,Perfil de los tres tipos de departamento
+t17_estabilidad_grupos.png,Estabilidad de los tipos de departamento: índice de Rand ajustado
+t18_comuna_grupos.png,Composición de cada comuna según los tres tipos de departamento
+grupo_08_exploratorio_diapositiva.jpg,Agrupamiento jerárquico de los barrios según los tipos de departamento que publican
+grupo_08_comunicativo_diapositiva.jpg,Precio y superficie de los avisos: Puerto Madero y Villa Lugano
