@@ -6,32 +6,22 @@ segundo cuatrimestre de 2026. Docente: Nicolás Sidicaro.
 Grupo 8: Joaquín Kweitel (916425) y Sofía Colombo (916997).
 
 
-## 1. Objetivo del trabajo
+## 1. Objetivo e hipótesis de trabajo
 
-> **BORRADOR. Esta sección la reescribe el grupo.**
->
-> Entender de qué depende el precio publicado de un departamento en venta en
-> la Ciudad de Buenos Aires: cuánto se asocia con lo que es la vivienda
-> (superficie, ambientes, baños, antigüedad) y cuánto con dónde está (el
-> barrio). La pregunta que ordena el trabajo es cuánto cambia el precio de un
-> mismo departamento según el barrio en el que se publica.
+Este trabajo estudia de qué depende el precio publicado de un departamento en venta en la Ciudad de Buenos Aires: cuánto se asocia con lo que es la vivienda —superficie, ambientes, baños, antigüedad— y cuánto con dónde está.
+
+Hipótesis. Dos departamentos de características equivalentes, con la misma superficie, los mismos ambientes, los mismos baños y la misma antigüedad, tienen precios sistemáticamente distintos según el barrio en el que se publican, y esa diferencia es grande en relación con lo que aporta el tamaño.
+
+Los resultados la apoyan y la reformulan. La apoyan: a igual vivienda, el precio pedido en el barrio más caro es 3,0 veces el del más barato. Y la reformulan, porque la pregunta de cuál de las dos variables pesa más estaba mal planteada: no compiten. La superficie está contenida en el precio total por construcción, y una vez que se divide el precio por los metros apenas aporta nada, 0,08 puntos de R². El barrio es el que da cuenta de esa variación: 26,7 puntos.
 
 
 ## 2. La base de datos y por qué la elegimos
 
-> **BORRADOR. Esta sección la reescribe el grupo.**
->
-> Avisos de venta de departamentos de MercadoLibre Argentina, relevados en
-> noviembre de 2024: 40.168 avisos en la base cruda, 39.305 después de quitar
-> las republicaciones, en los 48 barrios de la ciudad. La elegimos porque
-> junta en una misma fila el precio, las características de la vivienda y la
-> ubicación (barrio, comuna y coordenadas), que es justo lo que hace falta
-> para separar el peso de la vivienda del peso del barrio, y porque tiene
-> avisos suficientes para comparar barrios entre sí.
->
-> Lo que la base es y lo que no: representa la oferta publicada, no el stock
-> de viviendas ni las operaciones cerradas; los precios son los pedidos, no
-> los de venta; es un corte de un solo mes.
+Avisos de venta de departamentos de MercadoLibre Argentina, relevados en noviembre de 2024: 40.168 avisos en la base cruda y 39.305 después de quitar las republicaciones, distribuidos en los 48 barrios de la ciudad. Los modelos trabajan sobre 38.895 avisos en los 42 barrios con al menos 100 publicaciones.
+
+La elegimos porque reúne en una misma fila el precio, las características de la vivienda y la ubicación —barrio, comuna y coordenadas—, que es exactamente lo que hace falta para separar el peso de una cosa del peso de la otra. Y porque tiene avisos suficientes para comparar barrios entre sí con cierta solidez.
+
+Lo que la base es y lo que no: representa la oferta publicada, no el stock de viviendas ni las operaciones cerradas; los precios son los pedidos, no los pactados; y es un corte de un solo mes, sin dimensión temporal.
 
 
 ## 3. Qué hicimos
