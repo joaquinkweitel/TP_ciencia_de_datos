@@ -1,0 +1,10 @@
+campo,valor
+Nombre,Avisos de venta de departamentos en la Ciudad de Buenos Aires
+Fuente,"Publicaciones de MercadoLibre Argentina, scrapeadas por el docente"
+Qué representa,"La oferta de departamentos en venta publicada en el portal, no el stock de viviendas ni las operaciones cerradas"
+Unidad de observación,El aviso publicado. Una misma vivienda puede aparecer en más de una fila
+Período,Corte transversal de noviembre de 2024. La base no tiene variable de fecha
+Observaciones,40.168 avisos en la base cruda; 39.305 después de quitar republicaciones
+Variables,45 en la base original; 18 las que usamos en este análisis
+Cobertura,48 barrios y 15 comunas de CABA
+Moneda y operación,Todos los avisos son de venta y todos los precios están publicados en dólares

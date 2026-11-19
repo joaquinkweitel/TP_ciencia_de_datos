@@ -1,0 +1,32 @@
+# --- Sesión de R y RStudio -----------------------------------------------------
+.Rhistory
+.RData
+.Ruserdata
+.Rapp.history
+.Rproj.user/
+
+# --- Cachés y temporales ---------------------------------------------------------
+*_cache/
+cache/
+*.tmp
+*.bak
+*~
+# Archivos de bloqueo que deja Office mientras un documento está abierto
+~$*
+
+# --- Sistema operativo -----------------------------------------------------------
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- Documentos de trabajo, no forman parte del repositorio ---------------------
+decisiones.md
+prompt_cowork_instancia*.md
+material_clase/
+
+# --- Entregas que van por otro lado (presentaciones y PDF) ----------------------
+/*.pptx
+/*.pdf
+
+# --- Borrador de presentación que arma el script 05 (no es la entrega) ----------
+output/graficos/borrador_desde_R.pptx

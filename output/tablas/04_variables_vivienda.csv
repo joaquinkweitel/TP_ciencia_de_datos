@@ -1,0 +1,10 @@
+variable,descripcion,tipo,valores,nulos
+precio_usd,"Precio publicado del departamento, en dólares",Numérica (US$),de 23.000 a 2.900.000,0
+precio_m2_usd,Precio publicado dividido por la superficie cubierta,Numérica (US$/m²),de 1.011 a 7.375,0
+metros_cubiertos,Superficie cubierta declarada en el aviso,Numérica (m²),de 15 a 400,0
+ambientes,Cantidad de ambientes declarada en el aviso,Numérica (cantidad),de 1 a 8,0
+dormitorios,"Dormitorios según la categoría de búsqueda del portal, no según el aviso",Numérica (cantidad),"de 0 a 4, donde 4 es cuatro o más",0
+banos,Cantidad de baños declarada en el aviso,Numérica (cantidad),de 1 a 6,0
+tipo_depto,"Categoría del portal, de monoambiente a cuatro dormitorios o más",Categórica,5 categorías,0
+antiguedad_grupo,"Antigüedad agrupada en cuatro tramos, sin solapamiento",Categórica,4 categorías,0
+a_estrenar,Vale 1 si el aviso declara la propiedad a estrenar,Binaria,"vale 1 en el 38,6% de los avisos",0

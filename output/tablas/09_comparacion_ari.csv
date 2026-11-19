@@ -1,0 +1,9 @@
+comparacion,ari
+kmeans contra PAM,0.7375608689160346
+kmeans con y sin estandarizar,0.440283024469177
+kmeans con y sin extremos,0.8754048351771313
+k = 3 contra k = 2,0.618690565903132
+k = 3 contra k = 4,0.6500025487916685
+Grupos contra barrio,0.007252723287827606
+Grupos contra comuna,0.01319986207734544
+Grupos contra mitad norte-sur,0.035626279109966213

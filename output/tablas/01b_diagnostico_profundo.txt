@@ -1,0 +1,322 @@
+
+
+#### 1. ¿EL EJE ES NORTE-SUR Y NO CENTRO-PERIFERIA? ####
+
+--- Correlación del precio/m2 con la posición geográfica ---
+con latitud (norte = mayor lat) : 0.415 
+con longitud (este = mayor long): 0.034 
+con distancia al centro         : 0.011 
+
+--- Precio/m2 por decil de latitud ---
+# A tibble: 10 × 4
+   decil_lat avisos lat_mediana precio_m2_mediano
+       <int>  <int>       <dbl>             <dbl>
+ 1         1   4017       -34.6              2052
+ 2         2   4017       -34.6              2238
+ 3         3   4017       -34.6              2222
+ 4         4   4017       -34.6              2266
+ 5         5   4017       -34.6              2500
+ 6         6   4017       -34.6              2903
+ 7         7   4017       -34.6              3145
+ 8         8   4017       -34.6              3364
+ 9         9   4016       -34.6              3199
+10        10   4016       -34.6              3250
+
+--- Precio/m2 mediano por comuna, ordenado ---
+# A tibble: 15 × 4
+   comuna avisos precio_m2_mediano lat_mediana
+    <dbl>  <int>             <dbl>       <dbl>
+ 1     14   6238              3555       -34.6
+ 2     13   5983              3333       -34.6
+ 3     12   3051              2873       -34.6
+ 4      2   2672              2799       -34.6
+ 5     15   2928              2651       -34.6
+ 6      6   2863              2554       -34.6
+ 7     11   2004              2491       -34.6
+ 8      5   2284              2341       -34.6
+ 9      1   4098              2297       -34.6
+10      7   1914              2186       -34.6
+11      9   1079              2111       -34.6
+12     10   1260              2028       -34.6
+13      4   1244              2013       -34.6
+14      3   2311              1859       -34.6
+15      8    239              1700       -34.7
+
+--- Combinación: mitad norte vs mitad sur, por tramo de distancia al centro ---
+# A tibble: 4 × 5
+  tramo_centro `avisos_Norte de la ciudad` `avisos_Sur de la ciudad` `precio_m2_mediano_Norte de la ciudad` precio_m2_mediano_Su…¹
+  <fct>                              <int>                     <int>                                  <dbl>                  <dbl>
+1 0-3 km                              2725                      6009                                   2857                   2078
+2 3-6 km                              5446                      6709                                   3483                   2388
+3 6-9 km                              6475                      3416                                   3278                   2267
+4 más de 9 km                         5432                      3956                                   2975                   2203
+# ℹ abbreviated name: ¹​`precio_m2_mediano_Sur de la ciudad`
+
+
+#### 2. EL CASO VILLA SOLDATI ####
+
+# A tibble: 7 × 2
+  zona_aviso            n
+  <chr>             <int>
+1 Núñez                19
+2 Villa Soldati        10
+3 Villa Lugano          8
+4 Puerto Madero         2
+5 Coghlan               1
+6 Mataderos             1
+7 Parque Avellaneda     1
+# A tibble: 15 × 7
+      id precio_usd metros_cubiertos precio_m2_usd direccion                                                   zona_aviso   
+   <dbl>      <dbl>            <dbl>         <dbl> <chr>                                                       <chr>        
+ 1 43998     380000               57         6667. C. O'gorman 400 - Art Maria, Puerto Madero, Capital Federal Puerto Madero
+ 2 43987     230000               36         6389. O´gorman 400, Puerto Madero, Capital Federal                Puerto Madero
+ 3 43995     635347              110         5776. Orion - Unidad 808, Núñez, Capital Federal                  Núñez        
+ 4 43969     196410               38         5169. Orion - Unidad 811, Núñez, Capital Federal                  Núñez        
+ 5 43978     220793               43         5135. Orion - Unidad 309, Núñez, Capital Federal                  Núñez        
+ 6 43970     224829               44         5110. Orion - Unidad 801, Núñez, Capital Federal                  Núñez        
+ 7 43976     214881               43         4997. Orion - Unidad 206, Núñez, Capital Federal                  Núñez        
+ 8 43973     246983               50         4940. Orion - Unidad 708, Núñez, Capital Federal                  Núñez        
+ 9 43971     277875               57         4875  Orion - Unidad 804, Núñez, Capital Federal                  Núñez        
+10 43972     233564               48         4866. Orion - Unidad 805, Núñez, Capital Federal                  Núñez        
+11 43974     214087               44         4866. Orion - Unidad 503, Núñez, Capital Federal                  Núñez        
+12 43977     209909               44         4771. Orion - Unidad 403, Núñez, Capital Federal                  Núñez        
+13 43996     642890              137         4693. Orion - Unidad 704, Núñez, Capital Federal                  Núñez        
+14 43975     244146               53         4607. Orion - Unidad 407, Núñez, Capital Federal                  Núñez        
+15 43984     324048               72         4501. Orion - Unidad 305, Núñez, Capital Federal                  Núñez        
+   geocod_score
+          <dbl>
+ 1         87.3
+ 2         93.6
+ 3         87.1
+ 4         87.1
+ 5         87.1
+ 6         87.1
+ 7         87.1
+ 8         87.1
+ 9         87.1
+10         87.1
+11         87.1
+12         87.1
+13         87.1
+14         87.1
+15         87.1
+
+--- ¿Cuántos barrios tienen menos de 100 avisos? ---
+# A tibble: 6 × 2
+  barrio              n
+  <chr>           <int>
+1 VILLA REAL         40
+2 VILLA SOLDATI      42
+3 VILLA RIACHUELO    48
+4 VERSALLES          79
+5 PATERNAL           81
+6 NUEVA POMPEYA      87
+
+--- Discrepancia entre el barrio oficial y la zona declarada en el aviso ---
+Avisos donde la zona declarada contiene al barrio oficial (o al revés): 29415 (73.2%) 
+
+Barrios con mayor tasa de NO coincidencia (mínimo 100 avisos):
+# A tibble: 15 × 3
+   barrio            avisos pct_no_coincide
+   <chr>              <int>           <dbl>
+ 1 VILLA SANTA RITA     216            78.6
+ 2 VELEZ SARSFIELD      192            77.6
+ 3 CONSTITUCION         496            70.6
+ 4 RETIRO               972            61.7
+ 5 VILLA GRAL. MITRE    282            57.8
+ 6 SAN NICOLAS          895            55.8
+ 7 AGRONOMIA            173            54.3
+ 8 CHACARITA            467            50.5
+ 9 COLEGIALES          1141            50.1
+10 MONSERRAT            886            49.4
+11 VILLA ORTUZAR        433            48  
+12 PARQUE CHAS          213            46.5
+13 PARQUE AVELLANEDA    161            43.5
+14 BALVANERA           1747            41.6
+15 PARQUE CHACABUCO     493            40.6
+
+
+#### 3. REPETIDOS: EFECTO SOBRE LOS DESCRIPTIVOS ####
+
+--- Efecto de sacar las copias redundantes sobre los descriptivos ---
+# A tibble: 2 × 6
+  version                    n precio_mediano precio_m2_mediano m2_mediano pct_palermo
+  <chr>                  <int>          <dbl>             <dbl>      <dbl>       <dbl>
+1 Base completa          40168         140000              2687         53        15.5
+2 Sin copias redundantes 39146         140000              2687         53        15.5
+
+
+#### 4. ambientes CONTRA dormitorios ####
+
+La convención habitual es ambientes = dormitorios + 1 (los ambientes incluyen
+el living). Chequeamos cuántos avisos la cumplen.
+
+# A tibble: 11 × 3
+     dif     n   pct
+   <dbl> <int> <dbl>
+ 1    -3     1   0  
+ 2    -1     9   0  
+ 3     0  2108   5.2
+ 4     1 36315  90.4
+ 5     2  1324   3.3
+ 6     3   296   0.7
+ 7     4    94   0.2
+ 8     5    14   0  
+ 9     6     3   0  
+10     7     2   0  
+11     8     2   0  
+
+--- Casos imposibles bajo esa convención ---
+ambientes <= dormitorios: 2118 
+  de los cuales monoambientes con 1 dormitorio: 1883 
+
+--- ¿De dónde sale cada variable? tipo_depto contra ambientes ---
+# A tibble: 5 × 9
+  tipo_depto            `1`   `2`   `3`   `4`   `8`   `5`   `6`   `7`
+  <chr>               <int> <int> <int> <int> <int> <int> <int> <int>
+1 1 dormitorio         1883 11778   107     1     1     0     0     0
+2 2 dormitorios           5    46 11072   329     1    31    12     0
+3 3 dormitorios           0     1    94  5718     7   478   111    13
+4 4 dormitorios o más     1     0     3    85    49   939   289   114
+5 monoambiente         6808   121    39    20     2     7     2     1
+
+--- metros_por_ambiente: casos extremos ---
+# A tibble: 8 × 7
+     id metros_cubiertos ambientes dormitorios metros_por_ambiente precio_usd
+  <dbl>            <dbl>     <dbl>       <dbl>               <dbl>      <dbl>
+1 39414              400         1           0                 400     600000
+2 22011              366         1           0                 366     490000
+3 32740              321         1           0                 321     550000
+4 25288              211         1           0                 211     564600
+5 37633              190         1           0                 190     240000
+6 37619              189         1           0                 189     195000
+7 17704              185         1           0                 185     620300
+8 18674              170         1           0                 170     410700
+  titulo_aviso                                                                          
+  <chr>                                                                                 
+1 deposito en venta en villa crespo 400 metros en julian alvar                          
+2 venta amplia oficina edificio la prensa argentina                                     
+3 esquina montevideo - muy buena ubicación - a metros del parque vicente lópez y planes.
+4 departamento - villa crespo                                                           
+5 lindisima oficina esquina clásica de microcentro porteño                              
+6 departamento 8 o mas dorm. - san nicolás (centro vivienda), capital federal           
+7 local venta colegiales pozo                                                           
+8 local venta san telmo                                                                 
+
+
+#### 5. EL 38% 'A ESTRENAR' ####
+
+--- ¿Cómo se reparten los a estrenar entre barrios? ---
+# A tibble: 37 × 4
+   barrio            avisos pct_estrenar precio_m2_mediano
+   <chr>              <int>        <dbl>             <dbl>
+ 1 NUÑEZ               1504         64                3309
+ 2 SAAVEDRA             865         59.8              2841
+ 3 VILLA LURO           436         57.1              2248
+ 4 VILLA DEVOTO         912         56.6              2840
+ 5 LINIERS              616         51                2286
+ 6 VILLA CRESPO        1561         49.7              2647
+ 7 COLEGIALES          1141         48.4              3266
+ 8 MATADEROS            302         48                2090
+ 9 BELGRANO            3338         47.1              3375
+10 PALERMO             6238         44.8              3555
+11 COGHLAN              274         44.5              2864
+12 VILLA URQUIZA       1636         43                2944
+13 BARRACAS             705         40.4              2223
+14 PARQUE CHAS          213         40.4              2536
+15 PARQUE CHACABUCO     493         40.2              2433
+16 VILLA ORTUZAR        433         40.2              2828
+17 CHACARITA            467         40                2812
+18 MONSERRAT            886         39.2              2145
+19 MONTE CASTRO         245         38.4              2176
+20 PARQUE PATRICIOS     256         36.7              2019
+21 VILLA SANTA RITA     216         36.1              2201
+22 VILLA PUEYRREDON     276         34.1              2442
+23 ALMAGRO             1852         34                2407
+24 VILLA DEL PARQUE     594         33.2              2369
+25 BOEDO                432         33.1              2078
+26 FLORES              1421         32.7              2120
+27 SAN CRISTOBAL        564         31                1938
+28 CABALLITO           2863         30.5              2554
+29 CONSTITUCION         496         28.6              1875
+30 PUERTO MADERO        465         28                5667
+31 SAN TELMO            384         27.1              2082
+32 VILLA GRAL. MITRE    282         25.2              2081
+33 BALVANERA           1747         21.2              1828
+34 RECOLETA            2672         19.3              2799
+35 FLORESTA             268         16.8              1733
+36 RETIRO               972         16.7              2738
+37 SAN NICOLAS          895         15.8              1875
+
+--- ¿Quién publica los a estrenar? ---
+# A tibble: 4 × 4
+# Groups:   publicado_por [2]
+  publicado_por a_estrenar     n   pct
+  <chr>              <dbl> <int> <dbl>
+1 inmobiliaria           0  4738  44.1
+2 inmobiliaria           1  6002  55.9
+3 particular             0 20050  68.1
+4 particular             1  9378  31.9
+
+--- Precio/m2 por antigüedad y por quién publica ---
+# A tibble: 4 × 5
+  antiguedad_grupo  avisos_inmobiliaria avisos_particular precio_m2_mediano_inmobiliaria precio_m2_mediano_particular
+  <chr>                           <int>             <int>                          <dbl>                        <dbl>
+1 a. A estrenar                    6002              9378                           3590                         3010
+2 b. Hasta 20 años                 1967              7843                           3020                         2803
+3 c. 20 a 50 años                  1951              8300                           2308                         2174
+4 d. Más de 50 años                 820              3907                           2155                         1971
+
+--- ¿Los a estrenar son más chicos? ---
+# A tibble: 4 × 6
+  antiguedad_grupo  avisos m2_mediano ambientes_mediano precio_mediano precio_m2_mediano
+  <chr>              <int>      <dbl>             <dbl>          <dbl>             <dbl>
+1 a. A estrenar      15380         48                 2        155572.              3216
+2 b. Hasta 20 años    9810         49                 2        140000               2857
+3 c. 20 a 50 años    10251         58                 3        124000               2203
+4 d. Más de 50 años   4727         70                 3        132000               1997
+
+
+#### 6. OTROS CHEQUEOS ####
+
+--- Filas idénticas en todas las columnas menos id y url ---
+0 
+
+--- Precio/m2 por tipo de departamento ---
+# A tibble: 5 × 5
+  tipo_depto          avisos m2_mediano precio_mediano precio_m2_mediano
+  <chr>                <int>      <dbl>          <dbl>             <dbl>
+1 monoambiente          7000        32           93000              2900
+2 1 dormitorio         13770        42          114900              2697
+3 2 dormitorios        11496        66          170000              2571
+4 3 dormitorios         6422       105          286000              2675
+5 4 dormitorios o más   1480       178.         440000              2541
+
+--- Precio/m2 por tramo fino de superficie (la U) ---
+# A tibble: 9 × 5
+  tramo     avisos precio_m2_mediano precio_mediano pct_estrenar
+  <fct>      <int>             <dbl>          <dbl>        <dbl>
+1 (14,25]     1267              2900          65000         45.6
+2 (25,35]     6543              2710          85000         46.3
+3 (35,45]     7873              2614         105000         41.8
+4 (45,55]     5800              2673         135000         42.8
+5 (55,70]     6383              2587         163900         36.8
+6 (70,90]     5085              2613         209000         34.8
+7 (90,120]    3312              2766         289000         30.8
+8 (120,160]   2091              2962         400000         27  
+9 (160,400]   1814              3118         660000         16  
+
+--- Concentración: ¿qué porción de los avisos explican los 5 barrios top? ---
+Top 5 barrios : 42.2 % de los avisos
+Top 10 barrios: 61.8 % de los avisos
+Comuna 8 (Soldati, Lugano, Riachuelo): 0.6 % de los avisos
+
+--- Distancia al subte: ¿cuántos avisos están lejos? ---
+# A tibble: 5 × 4
+  tramo_subte avisos   pct precio_m2_mediano
+  <fct>        <int> <dbl>             <dbl>
+1 hasta 300 m   8977  22.3              2410
+2 300-600 m    11984  29.8              2727
+3 600-1000 m    8750  21.8              3121
+4 1-2 km        5737  14.3              2869
+5 más de 2 km   4720  11.8              2326

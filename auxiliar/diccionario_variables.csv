@@ -1,0 +1,46 @@
+variable,tipo,unidad,descripcion
+id,entero,-,Identificador unico del aviso dentro de la base
+operacion,categorica,-,Tipo de operacion: alquiler o venta
+precio_usd,numerica,USD,Precio publicado en dolares (alquiler: mensual; venta: total)
+precio_ars,numerica,ARS,"Precio en pesos, convertido con dolar MEP = 1132"
+precio_m2_usd,numerica,USD/m2,precio_usd dividido por metros_cubiertos
+log_precio_usd,numerica,log USD,Logaritmo natural de precio_usd
+log_precio_m2_usd,numerica,log USD/m2,Logaritmo natural de precio_m2_usd
+moneda_publicacion,categorica,-,Moneda en la que estaba publicado el aviso: dolar o peso
+metros_cubiertos,numerica,m2,Superficie cubierta declarada en el aviso
+metros_por_ambiente,numerica,m2,metros_cubiertos dividido por ambientes
+ambientes,entero,cantidad,Cantidad de ambientes declarada en el aviso
+dormitorios,entero,cantidad,Dormitorios segun la categoria de busqueda (0 = monoambiente)
+banos,entero,cantidad,Cantidad de banos declarada en el aviso
+tipo_depto,categorica,-,"Categoria de MercadoLibre: monoambiente, 1/2/3 dormitorios, 4 o mas"
+antiguedad_cat,categorica,-,Rango de antiguedad tal como lo informa el portal
+antiguedad_min,numerica,anios,Extremo inferior del rango de antiguedad
+antiguedad_max,numerica,anios,"Extremo superior del rango (NA en la categoria abierta ""Mas de 50 anios"")"
+antiguedad_media,numerica,anios,"Punto medio del rango; 60 para ""Mas de 50 anios"""
+antiguedad_grupo,categorica,-,Agrupamiento en cuatro tramos de antiguedad
+a_estrenar,binaria,0/1,Vale 1 si la propiedad es a estrenar
+publicado_por,categorica,-,Quien publica el aviso: inmobiliaria o particular
+inmobiliaria,texto,-,Nombre de la inmobiliaria (NA si publica un particular)
+publicacion_reciente,categorica,-,"Antiguedad del aviso: hoy, esta semana o sin dato"
+barrio,categorica,-,Barrio oficial de CABA (asignado por interseccion espacial)
+comuna,entero,-,Comuna de CABA (1 a 15)
+zona_aviso,texto,-,"Zona declarada en el aviso (Palermo Soho, Belgrano R, etc.). No es oficial"
+direccion,texto,-,Direccion publicada en el aviso
+lat,numerica,grados,Latitud geocodificada (WGS84)
+long,numerica,grados,Longitud geocodificada (WGS84)
+geocod_score,numerica,0-100,Calidad de la geocodificacion de ArcGIS (siempre > 80)
+dist_centro_m,numerica,m,Distancia al Obelisco
+dist_subte_m,numerica,m,Distancia a la estacion de subte mas cercana
+linea_subte_cercana,categorica,-,Linea de la estacion de subte mas cercana
+dist_comisaria_m,numerica,m,Distancia a la comisaria mas cercana
+dist_escuela_m,numerica,m,Distancia al establecimiento educativo mas cercano
+escuelas_1000m,entero,cantidad,"Establecimientos educativos (inicial, primario o secundario) a menos de 1000 m"
+dist_espacio_verde_m,numerica,m,Distancia al borde del espacio verde publico mas cercano
+espacios_verdes_1000m,entero,cantidad,Espacios verdes publicos con centroide a menos de 1000 m
+superficie_verde_1000m_m2,numerica,m2,Superficie verde publica acumulada a menos de 1000 m
+dist_parada_colectivo_m,numerica,m,Distancia a la parada de colectivo mas cercana
+paradas_colectivo_1000m,entero,cantidad,Paradas de colectivo a menos de 1000 m
+lineas_colectivo_1000m,entero,cantidad,Lineas de colectivo distintas que paran a menos de 1000 m
+valor_m2_usd_barrio,numerica,USD/m2,Valor de referencia del m2 de venta del barrio (fuente externa)
+titulo_aviso,texto,-,Titulo de la publicacion
+url,texto,-,Enlace al aviso original

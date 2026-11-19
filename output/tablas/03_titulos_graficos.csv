@@ -1,0 +1,9 @@
+id,titulo,bajada
+g1,El precio por m² dibuja un gradiente que va del sur al norte de la ciudad,Mediana del precio por m² en celdas de unos 200 metros de lado. Cada celda agrupa los avisos que caen adentro.
+g2,"Entre el barrio más caro y el más barato el precio por m² se multiplica por 3,8","Mediana del precio por m² de los avisos publicados en cada barrio. Entre paréntesis, la cantidad de avisos."
+g3,"A igual distancia del centro, el norte es entre un 35% y un 45% más caro","Mediana del precio por m² según la distancia al Obelisco, con la ciudad partida por la latitud mediana."
+g4,"El precio total sigue de cerca a la superficie, y la dispersión crece con el tamaño",Un punto por aviso (n = 39.305). La línea resume la tendencia de la nube; no es una regresión.
+g5,Las categorías de antigüedad se superponen: cuatro arrancan en el mismo año,Rango que cubre cada categoría tal como la informa el portal. La última es abierta y no tiene extremo superior.
+g6,La brecha norte-sur se sostiene dentro de cada tramo de antigüedad,Mediana del precio por m² según la antigüedad declarada y la mitad de la ciudad.
+g7,La mitad de los avisos pide menos de US$ 140.000 y la cola derecha estira el promedio,"Distribución del precio publicado, en intervalos de US$ 25.000. Quedan fuera del gráfico 357 avisos por encima de US$ 1.000.000."
+g8,Casi todos los avisos son de departamentos chicos: la mediana es de 53 m²,"Distribución de la superficie cubierta, en intervalos de 5 m². Los dos extremos de la variable son valores exactos."

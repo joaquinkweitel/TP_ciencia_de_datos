@@ -1,0 +1,273 @@
+
+#### 1. DESCRIPTIVAS DE LAS VARIABLES NUMÉRICAS ####
+
+# A tibble: 20 × 12
+   variable                  etiqueta                                        n     media  mediana    desvio    cv   minimo     p25
+   <chr>                     <chr>                                       <dbl>     <dbl>    <dbl>     <dbl> <dbl>    <dbl>   <dbl>
+ 1 precio_usd                Precio publicado (US$)                      39305 198218.   140000   191676.    0.97 23000    95000  
+ 2 precio_m2_usd             Precio por m² (US$)                         39305   2885.     2692.    1084.    0.38  1011.    2118. 
+ 3 metros_cubiertos          Superficie cubierta (m²)                    39305     66.5      53       44.9   0.68    15       38  
+ 4 ambientes                 Ambientes                                   39305      2.54      2        1.2   0.47     1        2  
+ 5 dormitorios               Dormitorios                                 39305      1.54      1        1.07  0.69     0        1  
+ 6 banos                     Baños                                       39305      1.39      1        0.68  0.49     1        1  
+ 7 antiguedad_media          Antigüedad, punto medio (años)              39305     19.5      10.5     21.5   1.1      0        0  
+ 8 dist_centro_m             Distancia al Obelisco (m)                   39305   6140.     5836.    3382.    0.55    46.7   3260. 
+ 9 dist_subte_m              Distancia al subte (m)                      39305    936.      569.    1038.    1.11     1.17   320. 
+10 dist_comisaria_m          Distancia a comisaría (m)                   39305    739.      707.     380.    0.51     3.2    450. 
+11 dist_escuela_m            Distancia a escuela (m)                     39305    165.      148.      97.8   0.59     0.91    96.4
+12 escuelas_1000m            Escuelas a menos de 1 km                    39305     32.3      32       11.4   0.35     1       24  
+13 dist_espacio_verde_m      Distancia a espacio verde (m)               39305    223.      198.     150.    0.67     0      117. 
+14 espacios_verdes_1000m     Espacios verdes a menos de 1 km             39305     16.2      13       10.6   0.65     1        9  
+15 superficie_verde_1000m_m2 Superficie verde a menos de 1 km (m²)       39305  89728.    42510.  151123.    1.68   138.   19974. 
+16 dist_parada_colectivo_m   Distancia a parada de colectivo (m)         39305     90.6      83.2     64.8   0.72     0.76    34.0
+17 paradas_colectivo_1000m   Paradas de colectivo a menos de 1 km        39305    143.      131       56.7   0.4     11      100  
+18 lineas_colectivo_1000m    Líneas de colectivo a menos de 1 km         39305     28.0      27       10     0.36     4       20  
+19 geocod_score              Calidad de la geocodificación (0 a 100)     39305     96.7      97        3.39  0.04    80.0     96.3
+20 valor_m2_usd_barrio       Valor de referencia del m² del barrio (US$) 39305   2052.     1982      540.    0.26   899     1613  
+        p75   maximo  asim
+      <dbl>    <dbl> <dbl>
+ 1 224829   2900000   4.09
+ 2   3438.     7375   1.05
+ 3     78       400   2.59
+ 4      3         8   0.66
+ 5      2         4   0.31
+ 6      2         6   1.95
+ 7     40        60   0.68
+ 8   8799.    14466.  0.24
+ 9   1034.     5865.  2.29
+10    981.     2495.  0.64
+11    216.      986.  1.55
+12     41        65   0.01
+13    312.      888.  0.74
+14     19        73   1.78
+15 113634.  2701303.  6.49
+16    129.      528.  1.05
+17    171       317   0.78
+18     33        56   0.54
+19     98.7     100  -2.57
+20   2344      4792   1.4 
+
+--- Las más asimétricas ---
+# A tibble: 8 × 4
+  etiqueta                                        media mediana  asim
+  <chr>                                           <dbl>   <dbl> <dbl>
+1 Superficie verde a menos de 1 km (m²)        89728.    42510.  6.49
+2 Precio publicado (US$)                      198218.   140000   4.09
+3 Superficie cubierta (m²)                        66.5      53   2.59
+4 Distancia al subte (m)                         936.      569.  2.29
+5 Baños                                            1.39      1   1.95
+6 Espacios verdes a menos de 1 km                 16.2      13   1.78
+7 Distancia a escuela (m)                        165.      148.  1.55
+8 Valor de referencia del m² del barrio (US$)   2052.     1982   1.4 
+
+--- Variables categóricas: tablas de frecuencias ---
+
+tipo_depto
+# A tibble: 5 × 3
+  tipo_depto              n   pct
+  <chr>               <int> <dbl>
+1 1 dormitorio        13465  34.3
+2 2 dormitorios       11270  28.7
+3 Monoambiente         6897  17.5
+4 3 dormitorios        6247  15.9
+5 4 dormitorios o más  1426   3.6
+
+antiguedad_grupo
+# A tibble: 4 × 3
+  antiguedad_grupo      n   pct
+  <chr>             <int> <dbl>
+1 a. A estrenar     15158  38.6
+2 c. 20 a 50 años   10004  25.5
+3 b. Hasta 20 años   9555  24.3
+4 d. Más de 50 años  4588  11.7
+
+publicado_por
+# A tibble: 2 × 3
+  publicado_por     n   pct
+  <chr>         <int> <dbl>
+1 Particular    28745  73.1
+2 Inmobiliaria  10560  26.9
+
+a_estrenar
+# A tibble: 2 × 3
+  a_estrenar     n   pct
+       <dbl> <int> <dbl>
+1          0 24147  61.4
+2          1 15158  38.6
+
+
+#### 2. OBSERVACIONES POR BARRIO ####
+
+# A tibble: 48 × 5
+   barrio_nom        avisos     pct acumulado comuna
+   <chr>              <int>   <dbl>     <dbl>  <dbl>
+ 1 Palermo             6120 15.6         15.6     14
+ 2 Belgrano            3271  8.32        23.9     13
+ 3 Caballito           2827  7.19        31.1      6
+ 4 Recoleta            2589  6.59        37.7      2
+ 5 Almagro             1822  4.64        42.3      5
+ 6 Balvanera           1684  4.28        46.6      3
+ 7 Villa Urquiza       1626  4.14        50.7     12
+ 8 Villa Crespo        1527  3.89        54.6     15
+ 9 Núñez               1469  3.74        58.4     13
+10 Flores              1404  3.57        61.9      7
+11 Colegiales          1111  2.83        64.8     13
+12 Retiro               933  2.37        67.1      1
+13 Villa Devoto         903  2.30        69.4     11
+14 San Nicolás          872  2.22        71.6      1
+15 Monserrat            863  2.20        73.8      1
+16 Saavedra             859  2.19        76.0     12
+17 Barracas             700  1.78        77.8      4
+18 Liniers              609  1.55        79.4      9
+19 Villa del Parque     592  1.51        80.9     11
+20 San Cristóbal        531  1.35        82.2      3
+21 Parque Chacabuco     481  1.22        83.4      7
+22 Constitución         479  1.22        84.7      1
+23 Puerto Madero        461  1.17        85.8      1
+24 Chacarita            456  1.16        87.0     15
+25 Villa Luro           428  1.09        88.1     10
+26 Villa Ortúzar        419  1.07        89.1     15
+27 Boedo                389  0.990       90.1      5
+28 San Telmo            376  0.957       91.1      1
+29 Mataderos            299  0.761       91.8      9
+30 Villa Gral. Mitre    276  0.702       92.5     11
+31 Villa Pueyrredón     274  0.697       93.2     12
+32 Coghlan              265  0.674       93.9     12
+33 Floresta             265  0.674       94.6     10
+34 Parque Patricios     254  0.646       95.2      4
+35 Monte Castro         240  0.611       95.9     10
+36 Villa Santa Rita     213  0.542       96.4     11
+37 Parque Chas          197  0.501       96.9     15
+38 Boca                 192  0.488       97.4      4
+39 Vélez Sarsfield      188  0.478       97.9     10
+40 Agronomía            168  0.427       98.3     15
+41 Parque Avellaneda    155  0.394       98.7      9
+42 Villa Lugano         148  0.377       99.1      8
+43 Nueva Pompeya         86  0.219       99.3      4
+44 Versalles             79  0.201       99.5     10
+45 Paternal              76  0.193       99.7     15
+46 Villa Riachuelo       48  0.122       99.8      8
+47 Villa Soldati         42  0.107       99.9      8
+48 Villa Real            39  0.0992     100       10
+
+Barrios: 48 
+Top 5 : 42,3 % de los avisos
+Top 10: 61,9 % de los avisos
+Barrios con menos de 100 avisos: 6 
+Barrios con al menos 100 avisos: 42 que reúnen 99,1 % de los avisos
+
+
+#### 3. LAS VARIABLES DE CERCANÍA ####
+
+--- Matriz de correlaciones entre las 11 variables de cercanía ---
+                            Dist. al Obelisco Dist. al subte Dist. a comisaría Dist. a escuela Escuelas a 1 km
+Dist. al Obelisco                        1.00           0.66              0.34            0.08           -0.54
+Dist. al subte                           0.66           1.00              0.39            0.15           -0.55
+Dist. a comisaría                        0.34           0.39              1.00            0.16           -0.35
+Dist. a escuela                          0.08           0.15              0.16            1.00           -0.33
+Escuelas a 1 km                         -0.54          -0.55             -0.35           -0.33            1.00
+Dist. a espacio verde                    0.11           0.03              0.01           -0.06            0.04
+Espacios verdes a 1 km                  -0.37          -0.07             -0.17            0.14           -0.16
+Sup. verde a 1 km                       -0.05           0.12              0.09            0.16           -0.23
+Dist. a parada de colectivo              0.12           0.07              0.07            0.13           -0.13
+Paradas a 1 km                          -0.78          -0.51             -0.39           -0.20            0.61
+Líneas a 1 km                           -0.80          -0.52             -0.39           -0.13            0.50
+                            Dist. a espacio verde Espacios verdes a 1 km Sup. verde a 1 km Dist. a parada de colectivo
+Dist. al Obelisco                            0.11                  -0.37             -0.05                        0.12
+Dist. al subte                               0.03                  -0.07              0.12                        0.07
+Dist. a comisaría                            0.01                  -0.17              0.09                        0.07
+Dist. a escuela                             -0.06                   0.14              0.16                        0.13
+Escuelas a 1 km                              0.04                  -0.16             -0.23                       -0.13
+Dist. a espacio verde                        1.00                  -0.34             -0.17                       -0.01
+Espacios verdes a 1 km                      -0.34                   1.00              0.35                        0.04
+Sup. verde a 1 km                           -0.17                   0.35              1.00                        0.07
+Dist. a parada de colectivo                 -0.01                   0.04              0.07                        1.00
+Paradas a 1 km                              -0.06                   0.19             -0.10                       -0.20
+Líneas a 1 km                               -0.08                   0.29             -0.05                       -0.12
+                            Paradas a 1 km Líneas a 1 km
+Dist. al Obelisco                    -0.78         -0.80
+Dist. al subte                       -0.51         -0.52
+Dist. a comisaría                    -0.39         -0.39
+Dist. a escuela                      -0.20         -0.13
+Escuelas a 1 km                       0.61          0.50
+Dist. a espacio verde                -0.06         -0.08
+Espacios verdes a 1 km                0.19          0.29
+Sup. verde a 1 km                    -0.10         -0.05
+Dist. a parada de colectivo          -0.20         -0.12
+Paradas a 1 km                        1.00          0.88
+Líneas a 1 km                         0.88          1.00
+
+--- Las correlaciones más fuertes entre pares ---
+# A tibble: 12 × 3
+   v1                v2                  r
+   <fct>             <fct>           <dbl>
+ 1 Líneas a 1 km     Paradas a 1 km   0.88
+ 2 Dist. al Obelisco Líneas a 1 km   -0.8 
+ 3 Dist. al Obelisco Paradas a 1 km  -0.78
+ 4 Dist. al Obelisco Dist. al subte   0.66
+ 5 Escuelas a 1 km   Paradas a 1 km   0.61
+ 6 Dist. al subte    Escuelas a 1 km -0.55
+ 7 Dist. al Obelisco Escuelas a 1 km -0.54
+ 8 Dist. al subte    Líneas a 1 km   -0.52
+ 9 Dist. al subte    Paradas a 1 km  -0.51
+10 Escuelas a 1 km   Líneas a 1 km    0.5 
+11 Dist. a comisaría Paradas a 1 km  -0.39
+12 Dist. a comisaría Dist. al subte   0.39
+
+Correlación media absoluta entre pares: 0,249 
+
+
+--- PCA sobre las 11 variables de cercanía ---
+
+Varianza explicada por componente:
+       eigenvalue percentage of variance cumulative percentage of variance
+comp 1       3.97                  36.10                             36.10
+comp 2       1.84                  16.69                             52.79
+comp 3       0.99                   9.03                             61.82
+comp 4       0.89                   8.14                             69.95
+comp 5       0.81                   7.34                             77.29
+
+Componentes con autovalor > 1 (criterio de Kaiser): 2 
+
+--- Correlación de cada variable con los dos primeros componentes ---
+# A tibble: 11 × 5
+   variable                       PC1    PC2 contrib_PC1 cos2_PC1
+   <chr>                        <dbl>  <dbl>       <dbl>    <dbl>
+ 1 Paradas a 1 km              -0.901  0.02       20.4      0.811
+ 2 Dist. al Obelisco            0.885 -0.232      19.7      0.782
+ 3 Líneas a 1 km               -0.88   0.148      19.5      0.774
+ 4 Dist. al subte               0.745  0.083      14.0      0.555
+ 5 Escuelas a 1 km             -0.733 -0.375      13.5      0.538
+ 6 Dist. a comisaría            0.556  0.03        7.80     0.31 
+ 7 Dist. a escuela              0.277  0.448       1.93     0.077
+ 8 Espacios verdes a 1 km      -0.245  0.796       1.51     0.06 
+ 9 Dist. a parada de colectivo  0.206  0.18        1.07     0.043
+10 Sup. verde a 1 km            0.122  0.663       0.377    0.015
+11 Dist. a espacio verde        0.086 -0.552       0.184    0.007
+
+--- Las suplementarias: dónde caen el precio por m² y la latitud ---
+# A tibble: 2 × 3
+  variable        PC1    PC2
+  <chr>         <dbl>  <dbl>
+1 Precio por m² 0.123  0.184
+2 Latitud       0.119 -0.024
+
+Lectura: PC1 es un eje de centralidad. Si el precio por m² queda cerca
+del centro del círculo, las once variables de cercanía no lo ordenan.
+
+--- Correlación directa del precio por m² con cada variable ---
+# A tibble: 11 × 4
+   variable                    r_pearson r_spearman r_con_dist_centro
+   <chr>                           <dbl>      <dbl>             <dbl>
+ 1 Paradas a 1 km                 -0.259     -0.223            -0.781
+ 2 Líneas a 1 km                  -0.163     -0.165            -0.804
+ 3 Espacios verdes a 1 km          0.158      0.14             -0.37 
+ 4 Dist. a parada de colectivo     0.123      0.112             0.125
+ 5 Escuelas a 1 km                -0.133     -0.09             -0.537
+ 6 Dist. a comisaría               0.068      0.085             0.339
+ 7 Dist. al subte                 -0.073      0.073             0.661
+ 8 Dist. al Obelisco               0.005      0.066             1    
+ 9 Sup. verde a 1 km               0.127      0.057            -0.049
+10 Dist. a espacio verde          -0.077     -0.051             0.106
+11 Dist. a escuela                 0.107      0.03              0.082
+números guardados: 07_numeros.csv 

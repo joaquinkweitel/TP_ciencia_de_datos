@@ -1,0 +1,1052 @@
+
+
+############ 1. CARGA Y ESTRUCTURA ############
+
+Dimensiones de la base: 40168 filas x 45 columnas
+Variables en el diccionario: 45 
+¿Coinciden los nombres base/diccionario?: TRUE 
+
+Rows: 40,168
+Columns: 45
+$ id                        <dbl> 5474, 5475, 5476, 5477, 5478, 5479, 5480, 5481, 5482, 5483, 5484, 5485, 5486, 5487, 5488, 5489…
+$ operacion                 <chr> "venta", "venta", "venta", "venta", "venta", "venta", "venta", "venta", "venta", "venta", "ven…
+$ precio_usd                <dbl> 67500, 119000, 70500, 79000, 96300, 66000, 90000, 90000, 69200, 75300, 74300, 76500, 74300, 76…
+$ precio_ars                <dbl> 76410000, 134708000, 79806000, 89428000, 109011600, 74712000, 101880000, 101880000, 78334400, …
+$ precio_m2_usd             <dbl> 2410.714, 4250.000, 2517.857, 2821.429, 4186.957, 2062.500, 3000.000, 3000.000, 2096.970, 2281…
+$ log_precio_usd            <dbl> 11.11988, 11.68688, 11.16337, 11.27720, 11.47522, 11.09741, 11.40756, 11.40756, 11.14476, 11.2…
+$ log_precio_m2_usd         <dbl> 7.787678, 8.354674, 7.831163, 7.944999, 8.339729, 7.631674, 8.006368, 8.006368, 7.648249, 7.73…
+$ moneda_publicacion        <chr> "dolar", "dolar", "dolar", "dolar", "dolar", "dolar", "dolar", "dolar", "dolar", "dolar", "dol…
+$ metros_cubiertos          <dbl> 28, 28, 28, 28, 23, 32, 30, 30, 33, 33, 33, 31, 33, 31, 33, 33, 33, 31, 33, 31, 40, 40, 40, 40…
+$ metros_por_ambiente       <dbl> 28.0, 28.0, 28.0, 28.0, 23.0, 32.0, 30.0, 30.0, 33.0, 33.0, 33.0, 31.0, 33.0, 31.0, 33.0, 33.0…
+$ ambientes                 <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+$ dormitorios               <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+$ banos                     <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…
+$ tipo_depto                <chr> "monoambiente", "monoambiente", "monoambiente", "monoambiente", "monoambiente", "monoambiente"…
+$ antiguedad_cat            <chr> "estrenar", "estrenar", "estrenar", "estrenar", "estrenar", "estrenar", "estrenar", "estrenar"…
+$ antiguedad_min            <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 5, 5, 5, 5, 5…
+$ antiguedad_max            <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 15, 15, 15, 1…
+$ antiguedad_media          <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 10, 10, 10, 1…
+$ antiguedad_grupo          <chr> "a. A estrenar", "a. A estrenar", "a. A estrenar", "a. A estrenar", "a. A estrenar", "a. A est…
+$ a_estrenar                <dbl> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0…
+$ publicado_por             <chr> "particular", "particular", "particular", "particular", "particular", "particular", "particula…
+$ inmobiliaria              <chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+$ publicacion_reciente      <chr> "sin dato", "sin dato", "sin dato", "sin dato", "sin dato", "sin dato", "sin dato", "sin dato"…
+$ barrio                    <chr> "AGRONOMIA", "AGRONOMIA", "AGRONOMIA", "AGRONOMIA", "AGRONOMIA", "AGRONOMIA", "AGRONOMIA", "AG…
+$ comuna                    <dbl> 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15…
+$ zona_aviso                <chr> "Agronomía", "Villa Devoto", "Agronomía", "Agronomía", "Agronomía", "Agronomía", "Villa Del Pa…
+$ direccion                 <chr> "AV DE LOS Constituyentes Al 3600. 2* B, Agronomía, Capital Federal", "Salvador María Del Carr…
+$ lat                       <dbl> -34.58843, -34.59380, -34.58843, -34.58843, -34.58843, -34.59358, -34.59678, -34.59629, -34.59…
+$ long                      <dbl> -58.48540, -58.50317, -58.48540, -58.48540, -58.48540, -58.49193, -58.49707, -58.49821, -58.48…
+$ geocod_score              <dbl> 98.24, 96.98, 98.24, 98.24, 98.24, 98.55, 98.22, 100.00, 98.22, 98.22, 98.22, 98.22, 98.22, 98…
+$ dist_centro_m             <dbl> 9677.892, 11212.463, 9677.892, 9677.892, 9677.892, 10188.906, 10626.168, 10735.028, 9368.110, …
+$ dist_subte_m              <dbl> 1246.464, 2654.524, 1246.464, 1246.464, 1246.464, 2017.614, 2570.135, 2588.615, 2002.783, 2002…
+$ linea_subte_cercana       <chr> "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B", "B",…
+$ dist_comisaria_m          <dbl> 1162.0612, 572.4715, 1162.0612, 1162.0612, 1162.0612, 806.6358, 811.8968, 737.4168, 1709.0337,…
+$ dist_escuela_m            <dbl> 496.13622, 127.24551, 496.13622, 496.13622, 496.13622, 246.01237, 221.64952, 288.13812, 81.383…
+$ escuelas_1000m            <dbl> 13, 23, 13, 13, 13, 25, 27, 27, 19, 19, 19, 19, 19, 19, 25, 25, 19, 19, 19, 19, 10, 10, 10, 10…
+$ dist_espacio_verde_m      <dbl> 67.2517706, 111.4997852, 67.2517706, 67.2517706, 67.2517706, 0.6017956, 514.2114164, 584.26367…
+$ espacios_verdes_1000m     <dbl> 9, 6, 9, 9, 9, 12, 13, 11, 14, 14, 14, 14, 14, 14, 12, 12, 14, 14, 14, 14, 13, 13, 13, 13, 5, …
+$ superficie_verde_1000m_m2 <dbl> 6894.830, 10155.173, 6894.830, 6894.830, 6894.830, 14444.111, 13760.586, 13084.412, 83726.264,…
+$ dist_parada_colectivo_m   <dbl> 118.99649, 33.71168, 118.99649, 118.99649, 118.99649, 74.53521, 30.31348, 97.20687, 24.57906, …
+$ paradas_colectivo_1000m   <dbl> 53, 83, 53, 53, 53, 75, 82, 77, 64, 64, 64, 64, 64, 64, 75, 75, 64, 64, 64, 64, 59, 59, 59, 59…
+$ lineas_colectivo_1000m    <dbl> 12, 17, 12, 12, 12, 18, 18, 17, 19, 19, 19, 19, 19, 19, 18, 18, 19, 19, 19, 19, 15, 15, 15, 15…
+$ valor_m2_usd_barrio       <dbl> 1613, 1613, 1613, 1613, 1613, 1613, 1613, 1613, 1613, 1613, 1613, 1613, 1613, 1613, 1613, 1613…
+$ titulo_aviso              <chr> "departamento venta agronomia 1 ambiente estrenar -", "departamento venta monoambiente villa d…
+$ url                       <chr> "https://departamento.mercadolibre.com.ar/MLA-1764102646-departamento-venta-agronomia-1-ambien…
+
+--- ¿El id identifica unívocamente al aviso? ---
+ids duplicados: 0 
+urls duplicadas: 0 
+
+--- Chequeo de codificación (acentos) ---
+ [1] "AGRONOMIA" "ALMAGRO"   "BALVANERA" "BARRACAS"  "BELGRANO"  "BOCA"      "BOEDO"     "CABALLITO" "CHACARITA" "COGHLAN"  
+[1] "Agronomía"        "Villa Devoto"     "Villa Del Parque" "Villa Pueyrredón" "Villa Ortúzar"   
+
+
+############ 2. VALORES FALTANTES ############
+
+# A tibble: 45 × 3
+   variable                     na pct_na
+   <chr>                     <int>  <dbl>
+ 1 inmobiliaria              29428   73.3
+ 2 antiguedad_max             4727   11.8
+ 3 id                            0    0  
+ 4 operacion                     0    0  
+ 5 precio_usd                    0    0  
+ 6 precio_ars                    0    0  
+ 7 precio_m2_usd                 0    0  
+ 8 log_precio_usd                0    0  
+ 9 log_precio_m2_usd             0    0  
+10 moneda_publicacion            0    0  
+11 metros_cubiertos              0    0  
+12 metros_por_ambiente           0    0  
+13 ambientes                     0    0  
+14 dormitorios                   0    0  
+15 banos                         0    0  
+16 tipo_depto                    0    0  
+17 antiguedad_cat                0    0  
+18 antiguedad_min                0    0  
+19 antiguedad_media              0    0  
+20 antiguedad_grupo              0    0  
+21 a_estrenar                    0    0  
+22 publicado_por                 0    0  
+23 publicacion_reciente          0    0  
+24 barrio                        0    0  
+25 comuna                        0    0  
+26 zona_aviso                    0    0  
+27 direccion                     0    0  
+28 lat                           0    0  
+29 long                          0    0  
+30 geocod_score                  0    0  
+31 dist_centro_m                 0    0  
+32 dist_subte_m                  0    0  
+33 linea_subte_cercana           0    0  
+34 dist_comisaria_m              0    0  
+35 dist_escuela_m                0    0  
+36 escuelas_1000m                0    0  
+37 dist_espacio_verde_m          0    0  
+38 espacios_verdes_1000m         0    0  
+39 superficie_verde_1000m_m2     0    0  
+40 dist_parada_colectivo_m       0    0  
+41 paradas_colectivo_1000m       0    0  
+42 lineas_colectivo_1000m        0    0  
+43 valor_m2_usd_barrio           0    0  
+44 titulo_aviso                  0    0  
+45 url                           0    0  
+
+--- ¿los NA de inmobiliaria son los particulares? ---
+              
+               FALSE  TRUE
+  inmobiliaria 10740     0
+  particular       0 29428
+NA de inmobiliaria: 29428 
+Avisos de particulares: 29428 
+¿Son exactamente los mismos avisos?: TRUE 
+
+--- ¿los NA de antiguedad_max son 'Más de 50 años'? ---
+                
+                 FALSE  TRUE
+  1 a 10 años     2433     0
+  1 a 20 años     2153     0
+  1 a 30 años     1729     0
+  1 a 5 años       809     0
+  10 a 30 años    1775     0
+  15 a 50 años     892     0
+  20 a 40 años    1963     0
+  30 a 40 años    1298     0
+  30 a 50 años    2646     0
+  40 a 50 años    3452     0
+  5 a 15 años      911     0
+  estrenar       15380     0
+  Más de 50 años     0  4727
+NA de antiguedad_max: 4727 
+¿Los NA coinciden con una sola categoría?:
+# A tibble: 1 × 2
+  antiguedad_cat     n
+  <chr>          <int>
+1 Más de 50 años  4727
+
+--- ¿Cuántas inmobiliarias distintas publican? ---
+inmobiliarias distintas: 96 
+# A tibble: 15 × 2
+   inmobiliaria                n
+   <chr>                   <int>
+ 1 Interwin                 1352
+ 2 Soldati                  1079
+ 3 Remax Premium             754
+ 4 Baigun Realty             743
+ 5 Yacoub                    724
+ 6 Sistema Coldwell Banker   567
+ 7 Toribio Achaval           469
+ 8 Korn Propiedades          398
+ 9 Lepore                    296
+10 Situar                    252
+11 Goldstein Propiedades     232
+12 Lucas Ariel Propiedades   223
+13 VOU                       184
+14 D Aria                    169
+15 NEMOVI                    166
+
+
+############ 3. VARIABLES CATEGÓRICAS ############
+
+
+--- operacion ---
+# A tibble: 1 × 3
+  operacion     n   pct
+  <chr>     <int> <dbl>
+1 venta     40168   100
+
+--- moneda_publicacion ---
+# A tibble: 1 × 3
+  moneda_publicacion     n   pct
+  <chr>              <int> <dbl>
+1 dolar              40168   100
+
+--- tipo_depto ---
+# A tibble: 5 × 3
+  tipo_depto              n   pct
+  <chr>               <int> <dbl>
+1 1 dormitorio        13770  34.3
+2 2 dormitorios       11496  28.6
+3 monoambiente         7000  17.4
+4 3 dormitorios        6422  16  
+5 4 dormitorios o más  1480   3.7
+
+--- antiguedad_cat ---
+# A tibble: 13 × 3
+   antiguedad_cat     n   pct
+   <chr>          <int> <dbl>
+ 1 estrenar       15380  38.3
+ 2 Más de 50 años  4727  11.8
+ 3 40 a 50 años    3452   8.6
+ 4 30 a 50 años    2646   6.6
+ 5 1 a 10 años     2433   6.1
+ 6 1 a 20 años     2153   5.4
+ 7 20 a 40 años    1963   4.9
+ 8 10 a 30 años    1775   4.4
+ 9 1 a 30 años     1729   4.3
+10 30 a 40 años    1298   3.2
+11 5 a 15 años      911   2.3
+12 15 a 50 años     892   2.2
+13 1 a 5 años       809   2  
+
+--- antiguedad_grupo ---
+# A tibble: 4 × 3
+  antiguedad_grupo      n   pct
+  <chr>             <int> <dbl>
+1 a. A estrenar     15380  38.3
+2 c. 20 a 50 años   10251  25.5
+3 b. Hasta 20 años   9810  24.4
+4 d. Más de 50 años  4727  11.8
+
+--- a_estrenar ---
+# A tibble: 2 × 3
+  a_estrenar     n   pct
+       <dbl> <int> <dbl>
+1          0 24788  61.7
+2          1 15380  38.3
+
+--- publicado_por ---
+# A tibble: 2 × 3
+  publicado_por     n   pct
+  <chr>         <int> <dbl>
+1 particular    29428  73.3
+2 inmobiliaria  10740  26.7
+
+--- publicacion_reciente ---
+# A tibble: 3 × 3
+  publicacion_reciente     n   pct
+  <chr>                <int> <dbl>
+1 sin dato             35910  89.4
+2 esta semana           3009   7.5
+3 hoy                   1249   3.1
+
+--- linea_subte_cercana ---
+# A tibble: 6 × 3
+  linea_subte_cercana     n   pct
+  <chr>               <int> <dbl>
+1 D                   13952  34.7
+2 B                    9998  24.9
+3 A                    7990  19.9
+4 E                    3637   9.1
+5 H                    2358   5.9
+6 C                    2233   5.6
+
+--- comuna ---
+# A tibble: 15 × 3
+   comuna     n   pct
+    <dbl> <int> <dbl>
+ 1     14  6238  15.5
+ 2     13  5983  14.9
+ 3      1  4098  10.2
+ 4     12  3051   7.6
+ 5     15  2928   7.3
+ 6      6  2863   7.1
+ 7      2  2672   6.7
+ 8      3  2311   5.8
+ 9      5  2284   5.7
+10     11  2004   5  
+11      7  1914   4.8
+12     10  1260   3.1
+13      4  1244   3.1
+14      9  1079   2.7
+15      8   239   0.6
+
+--- ¿las categorías de antigüedad se superponen? ---
+# A tibble: 13 × 6
+   antiguedad_cat     n min_declarado max_declarado media grupo            
+   <chr>          <int>         <dbl>         <dbl> <dbl> <chr>            
+ 1 estrenar       15380             0             0   0   a. A estrenar    
+ 2 1 a 10 años     2433             1            10   5.5 b. Hasta 20 años 
+ 3 1 a 20 años     2153             1            20  10.5 b. Hasta 20 años 
+ 4 1 a 30 años     1729             1            30  15.5 b. Hasta 20 años 
+ 5 1 a 5 años       809             1             5   3   b. Hasta 20 años 
+ 6 5 a 15 años      911             5            15  10   b. Hasta 20 años 
+ 7 10 a 30 años    1775            10            30  20   b. Hasta 20 años 
+ 8 15 a 50 años     892            15            50  32.5 c. 20 a 50 años  
+ 9 20 a 40 años    1963            20            40  30   c. 20 a 50 años  
+10 30 a 40 años    1298            30            40  35   c. 20 a 50 años  
+11 30 a 50 años    2646            30            50  40   c. 20 a 50 años  
+12 40 a 50 años    3452            40            50  45   c. 20 a 50 años  
+13 Más de 50 años  4727            50            NA  60   d. Más de 50 años
+
+--- barrios: cantidad y distribución (distribución de avisos entre barrios) ---
+barrios distintos: 48 
+# A tibble: 48 × 4
+   barrio                n   pct  acum
+   <chr>             <int> <dbl> <dbl>
+ 1 PALERMO            6238 15.5   15.5
+ 2 BELGRANO           3338  8.31  23.8
+ 3 CABALLITO          2863  7.13  31  
+ 4 RECOLETA           2672  6.65  37.6
+ 5 ALMAGRO            1852  4.61  42.2
+ 6 BALVANERA          1747  4.35  46.6
+ 7 VILLA URQUIZA      1636  4.07  50.6
+ 8 VILLA CRESPO       1561  3.89  54.5
+ 9 NUÑEZ              1504  3.74  58.3
+10 FLORES             1421  3.54  61.8
+11 COLEGIALES         1141  2.84  64.7
+12 RETIRO              972  2.42  67.1
+13 VILLA DEVOTO        912  2.27  69.3
+14 SAN NICOLAS         895  2.23  71.6
+15 MONSERRAT           886  2.21  73.8
+16 SAAVEDRA            865  2.15  75.9
+17 BARRACAS            705  1.76  77.7
+18 LINIERS             616  1.53  79.2
+19 VILLA DEL PARQUE    594  1.48  80.7
+20 SAN CRISTOBAL       564  1.4   82.1
+21 CONSTITUCION        496  1.23  83.3
+22 PARQUE CHACABUCO    493  1.23  84.6
+23 CHACARITA           467  1.16  85.7
+24 PUERTO MADERO       465  1.16  86.9
+25 VILLA LURO          436  1.09  88  
+26 VILLA ORTUZAR       433  1.08  89.1
+27 BOEDO               432  1.08  90.1
+28 SAN TELMO           384  0.96  91.1
+29 MATADEROS           302  0.75  91.8
+30 VILLA GRAL. MITRE   282  0.7   92.6
+31 VILLA PUEYRREDON    276  0.69  93.2
+32 COGHLAN             274  0.68  93.9
+33 FLORESTA            268  0.67  94.6
+34 PARQUE PATRICIOS    256  0.64  95.2
+35 MONTE CASTRO        245  0.61  95.8
+36 VILLA SANTA RITA    216  0.54  96.4
+37 PARQUE CHAS         213  0.53  96.9
+38 BOCA                196  0.49  97.4
+39 VELEZ SARSFIELD     192  0.48  97.9
+40 AGRONOMIA           173  0.43  98.3
+41 PARQUE AVELLANEDA   161  0.4   98.7
+42 VILLA LUGANO        149  0.37  99.1
+43 NUEVA POMPEYA        87  0.22  99.3
+44 PATERNAL             81  0.2   99.5
+45 VERSALLES            79  0.2   99.7
+46 VILLA RIACHUELO      48  0.12  99.8
+47 VILLA SOLDATI        42  0.1   99.9
+48 VILLA REAL           40  0.1  100  
+
+
+############ 4. VARIABLES NUMÉRICAS: DESCRIPTIVAS ############
+
+# A tibble: 21 × 13
+   variable                      n     media  mediana        sd    cv      min     p10     p25      p75      p90      p99      max
+   <chr>                     <dbl>     <dbl>    <dbl>     <dbl> <dbl>    <dbl>   <dbl>   <dbl>    <dbl>    <dbl>    <dbl>    <dbl>
+ 1 ambientes                 40168      2.55      2        1.2   0.47     1        1       2        3        4        6         8 
+ 2 antiguedad_media          40168     19.6      10.5     21.5   1.1      0        0       0       40       60       60        60 
+ 3 banos                     40168      1.4       1        0.69  0.49     1        1       1        2        2        4         6 
+ 4 dist_centro_m             40168   6121.     5818.    3381.    0.55    46.7   1718.   3237.    8780.   10873.   13336.    14466.
+ 5 dist_comisaria_m          40168    738.      705.     379.    0.51     3.2    278.    450.     981.    1234.    1802.     2495.
+ 6 dist_escuela_m            40168    164.      148.      97.7   0.59     0.91    55.5    96.3    216.     285.     460.      986.
+ 7 dist_espacio_verde_m      40168    223.      198.     149.    0.67     0       30     117.     312.     436.     619.      888.
+ 8 dist_parada_colectivo_m   40168     90.4      83.1     64.7   0.72     0.76    19.6    34.0    129.     169.     285.      528.
+ 9 dist_subte_m              40168    931.      568.    1034.    1.11     1.17   190.    320.    1031.    2215.    4982.     5865.
+10 dormitorios               40168      1.54      1        1.07  0.69     0        0       1        2        3        4         4 
+11 escuelas_1000m            40168     32.3      32       11.4   0.35     1       17      24       41       47       57        65 
+12 espacios_verdes_1000m     40168     16.2      13       10.6   0.66     1        7       9       19       31       52        73 
+13 geocod_score              40168     96.7      97.0      3.38  0.03    80.0     94.6    96.3     98.7     98.7    100       100 
+14 lineas_colectivo_1000m    40168     28.0      27       10.0   0.36     4       15      20       33       45       52        56 
+15 metros_cubiertos          40168     66.7      53       45.2   0.68    15       31      38       78      120      250       400 
+16 metros_por_ambiente       40168     26.4      24.3      9.62  0.36     5.75    17.7    20.2     30.5     37       56.2     400 
+17 paradas_colectivo_1000m   40168    143.      131       56.8   0.4     11       81     100      172      238      285       317 
+18 precio_m2_usd             40168   2881.     2687.    1083.    0.38  1011.    1688.   2111.    3433.    4312.    6322.     7375 
+19 precio_usd                40168 198481.   140000   191910.    0.97 23000    71857   95000   225000   380094.  990000   2900000 
+20 superficie_verde_1000m_m2 40168  89749.    42511.  150918.    1.68   138.   13524.  19989.  113669.  184302.  842167.  2701303.
+21 valor_m2_usd_barrio       40168   2051.     1982      539.    0.26   899     1447    1602     2344     2691     4792      4792 
+
+--- Asimetría: comparación media vs mediana ---
+# A tibble: 21 × 4
+   variable                      media  mediana ratio_media_mediana
+   <chr>                         <dbl>    <dbl>               <dbl>
+ 1 superficie_verde_1000m_m2  89749.    42511.                 2.11
+ 2 antiguedad_media              19.6      10.5                1.87
+ 3 dist_subte_m                 931.      568.                 1.64
+ 4 dormitorios                    1.54      1                  1.54
+ 5 precio_usd                198481.   140000                  1.42
+ 6 banos                          1.4       1                  1.4 
+ 7 ambientes                      2.55      2                  1.27
+ 8 metros_cubiertos              66.7      53                  1.26
+ 9 espacios_verdes_1000m         16.2      13                  1.24
+10 dist_espacio_verde_m         223.      198.                 1.13
+11 dist_escuela_m               164.      148.                 1.11
+12 dist_parada_colectivo_m       90.4      83.1                1.09
+13 metros_por_ambiente           26.4      24.3                1.09
+14 paradas_colectivo_1000m      143.      131                  1.09
+15 precio_m2_usd               2881.     2687.                 1.07
+16 dist_centro_m               6121.     5818.                 1.05
+17 dist_comisaria_m             738.      705.                 1.05
+18 lineas_colectivo_1000m        28.0      27                  1.04
+19 valor_m2_usd_barrio         2051.     1982                  1.03
+20 escuelas_1000m                32.3      32                  1.01
+21 geocod_score                  96.7      97.0                1   
+
+--- Ratios entre percentiles (desigualdad de la distribución) ---
+# A tibble: 21 × 6
+   variable                      p10      p50      p90 p90_p10 p75_p25
+   <chr>                       <dbl>    <dbl>    <dbl>   <dbl>   <dbl>
+ 1 antiguedad_media              0       10.5     60    Inf     Inf   
+ 2 dormitorios                   0        1        3    Inf       2   
+ 3 dist_espacio_verde_m         30      198.     436.    14.5     2.67
+ 4 superficie_verde_1000m_m2 13524.   42511.  184302.    13.6     5.69
+ 5 dist_subte_m                190.     568.    2215.    11.7     3.22
+ 6 dist_parada_colectivo_m      19.6     83.1    169.     8.65    3.79
+ 7 dist_centro_m              1718.    5818.   10873.     6.33    2.71
+ 8 precio_usd                71857   140000   380094.     5.29    2.37
+ 9 dist_escuela_m               55.5    148.     285.     5.14    2.24
+10 dist_comisaria_m            278.     705.    1234.     4.44    2.18
+11 espacios_verdes_1000m         7       13       31      4.43    2.11
+12 ambientes                     1        2        4      4       1.5 
+13 metros_cubiertos             31       53      120      3.87    2.05
+14 lineas_colectivo_1000m       15       27       45      3       1.65
+15 paradas_colectivo_1000m      81      131      238      2.94    1.72
+16 escuelas_1000m               17       32       47      2.76    1.71
+17 precio_m2_usd              1688.    2687.    4312.     2.56    1.63
+18 metros_por_ambiente          17.7     24.3     37      2.09    1.51
+19 banos                         1        1        2      2       2   
+20 valor_m2_usd_barrio        1447     1982     2691      1.86    1.46
+21 geocod_score                 94.6     97.0     98.7    1.04    1.03
+
+
+############ 5. ¿LA BASE VIENE RECORTADA? ############
+
+--- Máximos y mínimos exactos de las variables clave ---
+precio_usd              min =     23000.00   max =   2900000.00
+precio_m2_usd           min =      1010.99   max =      7375.00
+metros_cubiertos        min =        15.00   max =       400.00
+ambientes               min =         1.00   max =         8.00
+dormitorios             min =         0.00   max =         4.00
+banos                   min =         1.00   max =         6.00
+geocod_score            min =        80.03   max =       100.00
+antiguedad_media        min =         0.00   max =        60.00
+
+--- ¿Hay amontonamiento en el techo? (cantidad de avisos en el máximo) ---
+precio_usd            máximo =  2900000.0   avisos en el máximo =     1 (0.00%)
+metros_cubiertos      máximo =      400.0   avisos en el máximo =    11 (0.03%)
+ambientes             máximo =        8.0   avisos en el máximo =    60 (0.15%)
+dormitorios           máximo =        4.0   avisos en el máximo =  1480 (3.68%)
+banos                 máximo =        6.0   avisos en el máximo =     9 (0.02%)
+
+--- Valores más altos de metros_cubiertos y precio (los 10 últimos) ---
+# A tibble: 10 × 2
+   metros_cubiertos     n
+              <dbl> <int>
+ 1              400    11
+ 2              395     3
+ 3              394     1
+ 4              390     1
+ 5              385     2
+ 6              383     2
+ 7              380     5
+ 8              378     3
+ 9              377     3
+10              376     1
+# A tibble: 10 × 2
+   precio_usd     n
+        <dbl> <int>
+ 1    2900000     1
+ 2    2800000     1
+ 3    2600000     2
+ 4    2500000     1
+ 5    2400000     3
+ 6    2350000     1
+ 7    2300000     5
+ 8    2250000     3
+ 9    2225000     1
+10    2200000     1
+# A tibble: 10 × 2
+   precio_usd     n
+        <dbl> <int>
+ 1      23000     1
+ 2      23500     1
+ 3      24900     1
+ 4      25000     1
+ 5      25600     1
+ 6      28000     1
+ 7      28500     1
+ 8      29000     1
+ 9      29500     1
+10      29900     1
+# A tibble: 10 × 2
+   metros_cubiertos     n
+              <dbl> <int>
+ 1               15     5
+ 2               16     8
+ 3               17    17
+ 4               18    35
+ 5               19    48
+ 6               20   138
+ 7               21   125
+ 8               22   150
+ 9               23   233
+10               24   239
+
+--- geocod_score: ¿nunca baja de 80? ---
+mínimo: 80.03  | avisos con score = 100: 2937 
+
+--- Outliers por la regla de 1,5 RIC (a pesar del recorte previo) ---
+precio_usd          límite sup =   420000.0   atípicos altos =  3296 (8.21%)   atípicos bajos =    0
+precio_m2_usd       límite sup =     5416.7   atípicos altos =  1327 (3.30%)   atípicos bajos =    0
+metros_cubiertos    límite sup =      138.0   atípicos altos =  2792 (6.95%)   atípicos bajos =    0
+
+
+############ 6. AVISOS REPETIDOS ############
+
+Avisos que comparten título + precio + superficie con al menos otro: 1809 
+Grupos de repetición distintos: 787 
+
+Distribución del tamaño de los grupos repetidos:
+# A tibble: 6 × 2
+  n_copias avisos
+     <int>  <int>
+1        2   1234
+2        3    363
+3        4    152
+4        5     35
+5        6     18
+6        7      7
+
+--- ¿Los repetidos comparten también barrio y dirección? ---
+# A tibble: 9 × 3
+  barrios_distintos direcciones_distintas     n
+              <int>                 <int> <int>
+1                 1                     1    23
+2                 1                     2   585
+3                 1                     3   121
+4                 1                     4    35
+5                 1                     5     5
+6                 1                     6     3
+7                 1                     7     1
+8                 2                     2    13
+9                 2                     4     1
+
+--- Ejemplos concretos de repetición ---
+# A tibble: 20 × 10
+      id titulo_aviso                                                                                      precio_usd
+   <dbl> <chr>                                                                                                  <dbl>
+ 1 37177 venta departamento 2 ambientes 44m² con balcón al frente en san cristóbal cómodo y super luminoso      71000
+ 2 37178 venta departamento 2 ambientes 44m² con balcón al frente en san cristóbal cómodo y super luminoso      71000
+ 3 37179 venta departamento 2 ambientes 44m² con balcón al frente en san cristóbal cómodo y super luminoso      71000
+ 4 37180 venta departamento 2 ambientes 44m² con balcón al frente en san cristóbal cómodo y super luminoso      71000
+ 5 37181 venta departamento 2 ambientes 44m² con balcón al frente en san cristóbal cómodo y super luminoso      71000
+ 6 37182 venta departamento 2 ambientes 44m² con balcón al frente en san cristóbal cómodo y super luminoso      71000
+ 7 37183 venta departamento 2 ambientes 44m² con balcón al frente en san cristóbal cómodo y super luminoso      71000
+ 8 24682 monoambiente en venta en palermo hollywood                                                            126600
+ 9 24710 monoambiente en venta en palermo hollywood                                                            129900
+10 24711 monoambiente en venta en palermo hollywood                                                            129900
+11 24712 monoambiente en venta en palermo hollywood                                                            129900
+12 24713 monoambiente en venta en palermo hollywood                                                            129900
+13 24714 monoambiente en venta en palermo hollywood                                                            129900
+14 24715 monoambiente en venta en palermo hollywood                                                            129900
+15 24716 monoambiente en venta en palermo hollywood                                                            126600
+16 24717 monoambiente en venta en palermo hollywood                                                            126600
+17 24718 monoambiente en venta en palermo hollywood                                                            126600
+18 24719 monoambiente en venta en palermo hollywood                                                            126600
+19 24720 monoambiente en venta en palermo hollywood                                                            126600
+20  8989 venta de departamento de 4 ambientes                                                                  169000
+   metros_cubiertos ambientes barrio       
+              <dbl>     <dbl> <chr>        
+ 1               44         2 SAN CRISTOBAL
+ 2               44         2 SAN CRISTOBAL
+ 3               44         2 SAN CRISTOBAL
+ 4               44         2 SAN CRISTOBAL
+ 5               44         2 SAN CRISTOBAL
+ 6               44         2 SAN CRISTOBAL
+ 7               44         2 SAN CRISTOBAL
+ 8               26         1 PALERMO      
+ 9               26         1 PALERMO      
+10               26         1 PALERMO      
+11               26         1 PALERMO      
+12               26         1 PALERMO      
+13               26         1 PALERMO      
+14               26         1 PALERMO      
+15               26         1 PALERMO      
+16               26         1 PALERMO      
+17               26         1 PALERMO      
+18               26         1 PALERMO      
+19               26         1 PALERMO      
+20               80         4 BALVANERA    
+   direccion                                                                                 publicado_por inmobiliaria  n_copias
+   <chr>                                                                                     <chr>         <chr>            <int>
+ 1 Oruro Al 1400, Caballito, Capital Federal                                                 particular    <NA>                 7
+ 2 Oruro Al 1400, Almagro, Capital Federal                                                   particular    <NA>                 7
+ 3 Constitución Al 3000, Almagro, Capital Federal                                            particular    <NA>                 7
+ 4 Oruro Al 1400, Boedo, Capital Federal                                                     particular    <NA>                 7
+ 5 Constitución Al 3000, Boedo, Capital Federal                                              particular    <NA>                 7
+ 6 Oruro Al 1400, San Cristóbal, Capital Federal                                             particular    <NA>                 7
+ 7 Constitución Al 3000, San Cristóbal, Capital Federal                                      particular    <NA>                 7
+ 8 Dome Suites & Residence | Humboldt Y Paraguay | 4° 02, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+ 9 Dome Suites & Residence | Humboldt Y Paraguay | 5° 07, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+10 Dome Suites & Residence | Humboldt Y Paraguay | 5° 06, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+11 Dome Suites & Residence | Humboldt Y Paraguay | 5° 05, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+12 Dome Suites & Residence | Humboldt Y Paraguay | 5° 04, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+13 Dome Suites & Residence | Humboldt Y Paraguay | 5° 03, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+14 Dome Suites & Residence | Humboldt Y Paraguay | 5° 02, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+15 Dome Suites & Residence | Humboldt Y Paraguay | 4° 07, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+16 Dome Suites & Residence | Humboldt Y Paraguay | 4° 06, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+17 Dome Suites & Residence | Humboldt Y Paraguay | 4° 05, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+18 Dome Suites & Residence | Humboldt Y Paraguay | 4° 04, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+19 Dome Suites & Residence | Humboldt Y Paraguay | 4° 03, Palermo Hollywood, Capital Federal inmobiliaria  Baigun Realty        6
+20 Viamonte 2070, Barrio Norte, Capital Federal                                              particular    <NA>                 6
+
+--- ¿Cambia algo el promedio si los sacamos? ---
+Con repetidos   : n = 40168  precio medio = 198481  precio/m2 medio = 2880.8 
+Sin repetidos   : n = 39146  precio medio = 198446  precio/m2 medio = 2881 
+
+--- ¿Los repetidos se concentran en algún barrio o publicante? ---
+# A tibble: 2 × 3
+  publicado_por `FALSE` `TRUE`
+  <chr>           <int>  <int>
+1 inmobiliaria    10179    561
+2 particular      28180   1248
+# A tibble: 10 × 2
+   barrio           n
+   <chr>        <int>
+ 1 PALERMO        312
+ 2 RECOLETA       152
+ 3 BALVANERA      139
+ 4 BELGRANO       136
+ 5 NUÑEZ           82
+ 6 VILLA CRESPO    78
+ 7 RETIRO          73
+ 8 CABALLITO       66
+ 9 BOEDO           65
+10 ALMAGRO         60
+
+--- Chequeo alternativo: repetición por dirección + precio + superficie ---
+Avisos repetidos bajo este criterio: 1499 
+
+
+############ 7. COHERENCIA INTERNA ############
+
+--- ¿precio_m2_usd = precio_usd / metros_cubiertos? ---
+máxima diferencia absoluta: 4.547474e-13 
+
+--- ¿log_precio_usd = log(precio_usd)? ---
+máxima diferencia: 1.776357e-15 
+
+--- ¿precio_ars = precio_usd * 1132? ---
+máxima diferencia: 0 
+
+--- tipo_depto contra dormitorios ---
+                     
+                          0     1     2     3     4
+  1 dormitorio            0 13770     0     0     0
+  2 dormitorios           0     0 11496     0     0
+  3 dormitorios           0     0     0  6422     0
+  4 dormitorios o más     0     0     0     0  1480
+  monoambiente         7000     0     0     0     0
+
+--- ambientes contra dormitorios ---
+   
+        0     1     2     3     4
+  1  6808  1883     5     0     1
+  2   121 11778    46     1     0
+  3    39   107 11072    94     3
+  4    20     1   329  5718    85
+  5     7     0    31   478   939
+  6     2     0    12   111   289
+  7     1     0     0    13   114
+  8     2     1     1     7    49
+
+--- valor_m2_usd_barrio: ¿un único valor por barrio? ---
+# A tibble: 48 × 3
+   barrio            valores_distintos valor
+   <chr>                         <int> <dbl>
+ 1 PUERTO MADERO                     1  4792
+ 2 PALERMO                           1  2691
+ 3 RECOLETA                          1  2453
+ 4 BELGRANO                          1  2344
+ 5 NUÑEZ                             1  2343
+ 6 COGHLAN                           1  2296
+ 7 COLEGIALES                        1  2277
+ 8 SAAVEDRA                          1  2271
+ 9 VILLA URQUIZA                     1  2249
+10 VILLA DEVOTO                      1  2111
+11 CABALLITO                         1  1982
+12 VILLA CRESPO                      1  1924
+13 MONSERRAT                         1  1877
+14 RETIRO                            1  1750
+15 CHACARITA                         1  1724
+16 SAN TELMO                         1  1721
+17 VILLA DEL PARQUE                  1  1719
+18 ALMAGRO                           1  1698
+19 VILLA ORTUZAR                     1  1698
+20 SAN NICOLAS                       1  1647
+21 AGRONOMIA                         1  1613
+22 SAN CRISTOBAL                     1  1602
+23 BARRACAS                          1  1596
+24 VILLA SANTA RITA                  1  1559
+25 VILLA PUEYRREDON                  1  1526
+26 PARQUE CHAS                       1  1525
+27 PATERNAL                          1  1503
+28 LINIERS                           1  1502
+29 VILLA GRAL. MITRE                 1  1501
+30 BOEDO                             1  1500
+31 VILLA LURO                        1  1499
+32 CONSTITUCION                      1  1483
+33 PARQUE PATRICIOS                  1  1476
+34 FLORES                            1  1458
+35 MONTE CASTRO                      1  1447
+36 VILLA REAL                        1  1447
+37 VELEZ SARSFIELD                   1  1423
+38 MATADEROS                         1  1414
+39 FLORESTA                          1  1388
+40 PARQUE AVELLANEDA                 1  1374
+41 BALVANERA                         1  1359
+42 VERSALLES                         1  1354
+43 PARQUE CHACABUCO                  1  1346
+44 BOCA                              1  1232
+45 VILLA LUGANO                      1  1085
+46 NUEVA POMPEYA                     1  1081
+47 VILLA RIACHUELO                   1   950
+48 VILLA SOLDATI                     1   899
+
+--- barrio contra comuna: ¿cada barrio cae en una sola comuna? ---
+# A tibble: 1 × 2
+  comunas     n
+    <int> <int>
+1       1    48
+
+--- zona_aviso: ¿cuántas zonas declaradas hay y coinciden con el barrio? ---
+zonas distintas declaradas: 468 
+# A tibble: 15 × 2
+   zona_aviso            n
+   <chr>             <int>
+ 1 Belgrano           3416
+ 2 Palermo            3361
+ 3 Caballito          3227
+ 4 Recoleta           2444
+ 5 Núñez              1875
+ 6 Villa Urquiza      1799
+ 7 Almagro            1658
+ 8 Villa Crespo       1450
+ 9 Flores             1320
+10 Balvanera          1211
+11 Barrio Norte       1008
+12 Villa Devoto        925
+13 Palermo Hollywood   862
+14 Colegiales          799
+15 Barracas            710
+
+
+############ 8. PRIMERAS RELACIONES ############
+
+--- Precio por m2 por barrio (top 10 y bottom 10) ---
+# A tibble: 48 × 8
+   barrio            avisos precio_mediano m2_mediano precio_m2_mediano precio_m2_medio dist_centro_km referencia_externa
+   <chr>              <int>          <dbl>      <dbl>             <dbl>           <dbl>          <dbl>              <dbl>
+ 1 PUERTO MADERO        465        545000       106               5667.           5601.            2.2               4792
+ 2 PALERMO             6238        194000        55               3555.           3715.            4.9               2691
+ 3 BELGRANO            3338        194256.       56               3375            3513.            8.4               2344
+ 4 NUÑEZ               1504        165000        50               3309.           3427.           10                 2343
+ 5 COLEGIALES          1141        158000        52               3266.           3317.            7.1               2277
+ 6 VILLA SOLDATI         42        134257        45               2972.           3194.            8.9                899
+ 7 VILLA URQUIZA       1636        149000        52               2944.           2989.           10.2               2249
+ 8 COGHLAN              274        151000        55               2864.           2912.            9.7               2296
+ 9 SAAVEDRA             865        142000        48               2841.           2907.           10.9               2271
+10 VILLA DEVOTO         912        173000        64               2840.           3123.           12                 2111
+11 VILLA ORTUZAR        433        140000        51               2828.           2841.            8.2               1698
+12 CHACARITA            467        123269        45               2812.           2872.            6.6               1724
+13 RECOLETA            2672        199000        70               2799.           3003.            2.3               2453
+14 RETIRO               972        229000        80               2738.           2982.            1.1               1750
+15 VILLA CRESPO        1561        120000        47               2647.           2735.            5.4               1924
+16 CABALLITO           2863        150000        60               2554.           2651.            5.6               1982
+17 PARQUE CHAS          213        107000        40               2536.           2554.            9                 1525
+18 AGRONOMIA            173        120000        50               2500            2557.           10.2               1613
+19 VILLA PUEYRREDON     276        115000        47.5             2442.           2458.           11.3               1526
+20 PARQUE CHACABUCO     493        125000        56               2433.           2430.            6.4               1346
+21 ALMAGRO             1852        119950.       49               2407.           2483.            3.7               1698
+22 VILLA DEL PARQUE     594        125000        51.5             2369.           2487.           10.1               1719
+23 LINIERS              616        108000        50               2286.           2265.           13.3               1502
+24 VILLA LURO           436         99000        47               2248.           2297.           11.7               1499
+25 BARRACAS             705        120000        56               2223.           2256.            3.6               1596
+26 VILLA SANTA RITA     216         90000        44               2201.           2184.            9.1               1559
+27 MONTE CASTRO         245        109500        47               2176            2206.           11.5               1447
+28 MONSERRAT            886        105000        45               2145.           2489.            1.2               1877
+29 FLORES              1421        115000        54               2120            2186.            7.9               1458
+30 PATERNAL              81         89900        42               2113.           2243.            7.8               1503
+31 MATADEROS            302         98500        47.5             2090.           2083.           12.7               1414
+32 SAN TELMO            384        110000        50               2082.           2255.            2.3               1721
+33 VILLA GRAL. MITRE    282         99250        49               2081.           2162.            8                 1501
+34 BOEDO                432         95950        45               2078.           2184.            4.4               1500
+35 VERSALLES             79         92000        50               2024.           2125.           13.2               1354
+36 PARQUE PATRICIOS     256         85450        44               2019.           2044.            3.8               1476
+37 SAN CRISTOBAL        564         80000        43               1938.           1982.            2.8               1602
+38 VILLA REAL            40        112500        60.5             1926.           2000.           13.4               1447
+39 VILLA RIACHUELO       48         92450        52.5             1918.           1925.           12.7                950
+40 SAN NICOLAS          895         92000        48               1875            2008.            0.7               1647
+41 CONSTITUCION         496         80000        40               1875.           2024.            2                 1483
+42 VELEZ SARSFIELD      192         88500        48               1854.           1900.           10.5               1423
+43 BALVANERA           1747         94300        51               1828.           2063.            2                 1359
+44 PARQUE AVELLANEDA    161         89900        52               1735.           1751.           10                 1374
+45 FLORESTA             268         85000        52               1733.           1780.            9.5               1388
+46 BOCA                 196         78000        52               1598.           1768.            3.6               1232
+47 NUEVA POMPEYA         87         70000        50               1552.           1624.            5.7               1081
+48 VILLA LUGANO         149         73100        52               1500            1716.           11.6               1085
+
+--- Correlación entre precio_m2 mediano por barrio y la referencia externa ---
+Pearson : 0.89 
+Spearman: 0.764 
+
+--- Matriz de correlaciones entre las variables de la pregunta ---
+
+Pearson:
+                       precio_usd log_precio_usd precio_m2_usd metros_cubiertos ambientes dormitorios banos antiguedad_media
+precio_usd                   1.00           0.87          0.56             0.83      0.57        0.53  0.68            -0.04
+log_precio_usd               0.87           1.00          0.61             0.80      0.66        0.64  0.69            -0.09
+precio_m2_usd                0.56           0.61          1.00             0.13     -0.04       -0.05  0.20            -0.45
+metros_cubiertos             0.83           0.80          0.13             1.00      0.80        0.75  0.76             0.21
+ambientes                    0.57           0.66         -0.04             0.80      1.00        0.95  0.66             0.36
+dormitorios                  0.53           0.64         -0.05             0.75      0.95        1.00  0.64             0.35
+banos                        0.68           0.69          0.20             0.76      0.66        0.64  1.00             0.07
+antiguedad_media            -0.04          -0.09         -0.45             0.21      0.36        0.35  0.07             1.00
+dist_centro_m               -0.07          -0.03          0.01            -0.11     -0.07       -0.05 -0.04            -0.28
+dist_subte_m                -0.04          -0.06         -0.07            -0.05     -0.02       -0.01 -0.02            -0.15
+dist_espacio_verde_m        -0.13          -0.11         -0.08            -0.11     -0.07       -0.06 -0.08            -0.06
+espacios_verdes_1000m        0.26           0.22          0.16             0.24      0.13        0.10  0.14             0.16
+lineas_colectivo_1000m      -0.04          -0.08         -0.17             0.06      0.06        0.05  0.00             0.29
+escuelas_1000m              -0.11          -0.06         -0.13             0.00      0.05        0.04 -0.01             0.21
+                       dist_centro_m dist_subte_m dist_espacio_verde_m espacios_verdes_1000m lineas_colectivo_1000m
+precio_usd                     -0.07        -0.04                -0.13                  0.26                  -0.04
+log_precio_usd                 -0.03        -0.06                -0.11                  0.22                  -0.08
+precio_m2_usd                   0.01        -0.07                -0.08                  0.16                  -0.17
+metros_cubiertos               -0.11        -0.05                -0.11                  0.24                   0.06
+ambientes                      -0.07        -0.02                -0.07                  0.13                   0.06
+dormitorios                    -0.05        -0.01                -0.06                  0.10                   0.05
+banos                          -0.04        -0.02                -0.08                  0.14                   0.00
+antiguedad_media               -0.28        -0.15                -0.06                  0.16                   0.29
+dist_centro_m                   1.00         0.66                 0.11                 -0.37                  -0.80
+dist_subte_m                    0.66         1.00                 0.03                 -0.07                  -0.52
+dist_espacio_verde_m            0.11         0.03                 1.00                 -0.34                  -0.08
+espacios_verdes_1000m          -0.37        -0.07                -0.34                  1.00                   0.29
+lineas_colectivo_1000m         -0.80        -0.52                -0.08                  0.29                   1.00
+escuelas_1000m                 -0.54        -0.55                 0.04                 -0.16                   0.50
+                       escuelas_1000m
+precio_usd                      -0.11
+log_precio_usd                  -0.06
+precio_m2_usd                   -0.13
+metros_cubiertos                 0.00
+ambientes                        0.05
+dormitorios                      0.04
+banos                           -0.01
+antiguedad_media                 0.21
+dist_centro_m                   -0.54
+dist_subte_m                    -0.55
+dist_espacio_verde_m             0.04
+espacios_verdes_1000m           -0.16
+lineas_colectivo_1000m           0.50
+escuelas_1000m                   1.00
+
+Spearman:
+                       precio_usd log_precio_usd precio_m2_usd metros_cubiertos ambientes dormitorios banos antiguedad_media
+precio_usd                   1.00           1.00          0.58             0.80      0.65        0.63  0.65            -0.11
+log_precio_usd               1.00           1.00          0.58             0.80      0.65        0.63  0.65            -0.11
+precio_m2_usd                0.58           0.58          1.00             0.03     -0.09       -0.09  0.17            -0.50
+metros_cubiertos             0.80           0.80          0.03             1.00      0.89        0.87  0.70             0.22
+ambientes                    0.65           0.65         -0.09             0.89      1.00        0.97  0.65             0.36
+dormitorios                  0.63           0.63         -0.09             0.87      0.97        1.00  0.65             0.35
+banos                        0.65           0.65          0.17             0.70      0.65        0.65  1.00             0.06
+antiguedad_media            -0.11          -0.11         -0.50             0.22      0.36        0.35  0.06             1.00
+dist_centro_m                0.00           0.00          0.07            -0.04     -0.04       -0.04 -0.02            -0.26
+dist_subte_m                 0.03           0.03          0.08             0.00     -0.02       -0.02  0.01            -0.19
+dist_espacio_verde_m        -0.09          -0.09         -0.05            -0.08     -0.07       -0.07 -0.08            -0.06
+espacios_verdes_1000m        0.16           0.16          0.14             0.11      0.07        0.06  0.10             0.10
+lineas_colectivo_1000m      -0.07          -0.07         -0.17             0.03      0.05        0.05  0.01             0.26
+escuelas_1000m              -0.03          -0.03         -0.09             0.00      0.03        0.03 -0.01             0.18
+                       dist_centro_m dist_subte_m dist_espacio_verde_m espacios_verdes_1000m lineas_colectivo_1000m
+precio_usd                      0.00         0.03                -0.09                  0.16                  -0.07
+log_precio_usd                  0.00         0.03                -0.09                  0.16                  -0.07
+precio_m2_usd                   0.07         0.08                -0.05                  0.14                  -0.17
+metros_cubiertos               -0.04         0.00                -0.08                  0.11                   0.03
+ambientes                      -0.04        -0.02                -0.07                  0.07                   0.05
+dormitorios                    -0.04        -0.02                -0.07                  0.06                   0.05
+banos                          -0.02         0.01                -0.08                  0.10                   0.01
+antiguedad_media               -0.26        -0.19                -0.06                  0.10                   0.26
+dist_centro_m                   1.00         0.56                 0.11                 -0.31                  -0.82
+dist_subte_m                    0.56         1.00                 0.01                 -0.02                  -0.61
+dist_espacio_verde_m            0.11         0.01                 1.00                 -0.36                  -0.06
+espacios_verdes_1000m          -0.31        -0.02                -0.36                  1.00                   0.18
+lineas_colectivo_1000m         -0.82        -0.61                -0.06                  0.18                   1.00
+escuelas_1000m                 -0.53        -0.58                 0.07                 -0.10                   0.58
+                       escuelas_1000m
+precio_usd                      -0.03
+log_precio_usd                  -0.03
+precio_m2_usd                   -0.09
+metros_cubiertos                 0.00
+ambientes                        0.03
+dormitorios                      0.03
+banos                           -0.01
+antiguedad_media                 0.18
+dist_centro_m                   -0.53
+dist_subte_m                    -0.58
+dist_espacio_verde_m             0.07
+espacios_verdes_1000m           -0.10
+lineas_colectivo_1000m           0.58
+escuelas_1000m                   1.00
+
+--- ¿Cuánta variación del precio/m2 es entre barrios y cuánta adentro? ---
+Varianza total       : 1173150 
+Varianza entre barrios: 432343  (36.9% del total) 
+Varianza dentro       : 740807  (63.1% del total) 
+
+--- Lo mismo para el precio total ---
+% entre barrios: 18.4% 
+
+--- Precio/m2 según tramo de superficie ---
+# A tibble: 6 × 4
+  tramo_m2   avisos precio_mediano precio_m2_mediano
+  <fct>       <int>          <dbl>             <dbl>
+1 hasta 35     7810          81000              2735
+2 36-50       11139         113000              2639
+3 51-70        8917         155000              2588
+4 71-100       6599         220000              2625
+5 101-150      3529         350000              2909
+6 más de 150   2174         630000              3063
+
+--- Precio/m2 según quién publica ---
+# A tibble: 2 × 5
+  publicado_por avisos m2_mediano precio_mediano precio_m2_mediano
+  <chr>          <int>      <dbl>          <dbl>             <dbl>
+1 inmobiliaria   10740         51         159280              3125
+2 particular     29428         54         135000              2562
+
+--- Precio/m2 según antigüedad ---
+# A tibble: 4 × 4
+  antiguedad_grupo  avisos precio_m2_mediano m2_mediano
+  <chr>              <int>             <dbl>      <dbl>
+1 a. A estrenar      15380              3216         48
+2 b. Hasta 20 años    9810              2857         49
+3 c. 20 a 50 años    10251              2203         58
+4 d. Más de 50 años   4727              1997         70
+
+--- Precio/m2 según distancia al centro (deciles) ---
+# A tibble: 10 × 4
+   decil_centro avisos km_centro precio_m2_mediano
+          <int>  <int>     <dbl>             <dbl>
+ 1            1   4017       1.2              2273
+ 2            2   4017       2.2              2444
+ 3            3   4017       3.2              2661
+ 4            4   4017       4.3              2700
+ 5            5   4017       5.3              2978
+ 6            6   4017       6.3              2935
+ 7            7   4017       7.6              2917
+ 8            8   4017       8.8              2817
+ 9            9   4016      10.2              2857
+10           10   4016      11.8              2437
+
+
+############ 9. SKIM GENERAL ############
+
+── Data Summary ────────────────────────
+                           Values
+Name                       base  
+Number of rows             40168 
+Number of columns          45    
+_______________________          
+Column type frequency:           
+  character                14    
+  numeric                  31    
+________________________         
+Group variables            None  
+
+── Variable type: character ──────────────────────────────────────────────────────────────────────────────────────────────────────
+   skim_variable        n_missing complete_rate min max empty n_unique whitespace
+ 1 operacion                    0         1       5   5     0        1          0
+ 2 moneda_publicacion           0         1       5   5     0        1          0
+ 3 tipo_depto                   0         1      12  19     0        5          0
+ 4 antiguedad_cat               0         1       8  14     0       13          0
+ 5 antiguedad_grupo             0         1      13  17     0        4          0
+ 6 publicado_por                0         1      10  12     0        2          0
+ 7 inmobiliaria             29428         0.267   3  30     0       96          0
+ 8 publicacion_reciente         0         1       3  11     0        3          0
+ 9 barrio                       0         1       4  17     0       48          0
+10 zona_aviso                   0         1       2  75     0      468          0
+11 direccion                    0         1      22 223     0    26935          0
+12 linea_subte_cercana          0         1       1   1     0        6          0
+13 titulo_aviso                 0         1       1 200     0    27841          0
+14 url                          0         1     181 376     0    40168          0
+
+── Variable type: numeric ────────────────────────────────────────────────────────────────────────────────────────────────────────
+   skim_variable             n_missing complete_rate          mean      sd           p0          p25          p50          p75
+ 1 id                                0         1         25558.    1.16e+4     5474         15516.       25558.       35599.  
+ 2 precio_usd                        0         1        198481.    1.92e+5    23000         95000       140000       225000   
+ 3 precio_ars                        0         1     224680932.    2.17e+8 26036000     107540000    158480000    254700000   
+ 4 precio_m2_usd                     0         1          2881.    1.08e+3     1011.         2111.        2687.        3433.  
+ 5 log_precio_usd                    0         1            11.9   6.62e-1       10.0          11.5         11.8         12.3 
+ 6 log_precio_m2_usd                 0         1             7.90  3.64e-1        6.92          7.65         7.90         8.14
+ 7 metros_cubiertos                  0         1            66.7   4.52e+1       15            38           53           78   
+ 8 metros_por_ambiente               0         1            26.4   9.62e+0        5.75         20.2         24.3         30.5 
+ 9 ambientes                         0         1             2.55  1.20e+0        1             2            2            3   
+10 dormitorios                       0         1             1.54  1.07e+0        0             1            1            2   
+11 banos                             0         1             1.40  6.87e-1        1             1            1            2   
+12 antiguedad_min                    0         1            14.3   1.86e+1        0             0            1           30   
+13 antiguedad_max                 4727         0.882        18.9   2.02e+1        0             0           10           40   
+14 antiguedad_media                  0         1            19.6   2.15e+1        0             0           10.5         40   
+15 a_estrenar                        0         1             0.383 4.86e-1        0             0            0            1   
+16 comuna                            0         1             8.84  4.92e+0        1             4           11           13   
+17 lat                               0         1           -34.6   2.67e-2      -34.7         -34.6        -34.6        -34.6 
+18 long                              0         1           -58.4   3.82e-2      -58.5         -58.5        -58.4        -58.4 
+19 geocod_score                      0         1            96.7   3.38e+0       80.0          96.3         97.0         98.7 
+20 dist_centro_m                     0         1          6121.    3.38e+3       46.7        3237.        5818.        8780.  
+21 dist_subte_m                      0         1           931.    1.03e+3        1.17        320.         568.        1031.  
+22 dist_comisaria_m                  0         1           738.    3.79e+2        3.20        450.         705.         981.  
+23 dist_escuela_m                    0         1           164.    9.77e+1        0.907        96.3        148.         216.  
+24 escuelas_1000m                    0         1            32.3   1.14e+1        1            24           32           41   
+25 dist_espacio_verde_m              0         1           223.    1.49e+2        0           117.         198.         312.  
+26 espacios_verdes_1000m             0         1            16.2   1.06e+1        1             9           13           19   
+27 superficie_verde_1000m_m2         0         1         89749.    1.51e+5      138.        19989.       42511.      113669.  
+28 dist_parada_colectivo_m           0         1            90.4   6.47e+1        0.756        34.0         83.1        129.  
+29 paradas_colectivo_1000m           0         1           143.    5.68e+1       11           100          131          172   
+30 lineas_colectivo_1000m            0         1            28.0   1.00e+1        4            20           27           33   
+31 valor_m2_usd_barrio               0         1          2051.    5.39e+2      899          1602         1982         2344   
+            p100 hist 
+ 1      45641    ▇▇▇▇▇
+ 2    2900000    ▇▁▁▁▁
+ 3 3282800000    ▇▁▁▁▁
+ 4       7375    ▆▇▃▁▁
+ 5         14.9  ▁▇▅▁▁
+ 6          8.91 ▁▅▇▅▁
+ 7        400    ▇▁▁▁▁
+ 8        400    ▇▁▁▁▁
+ 9          8    ▇▅▃▁▁
+10          4    ▅▇▇▃▁
+11          6    ▇▁▁▁▁
+12         50    ▇▁▁▁▂
+13         50    ▇▁▂▂▃
+14         60    ▇▁▂▂▂
+15          1    ▇▁▁▁▅
+16         15    ▅▃▂▃▇
+17        -34.5  ▁▂▇▇▃
+18        -58.4  ▂▅▇▆▃
+19        100    ▁▁▁▁▇
+20      14466.   ▆▇▇▆▂
+21       5865.   ▇▁▁▁▁
+22       2495.   ▅▇▃▁▁
+23        986.   ▇▃▁▁▁
+24         65    ▁▅▇▅▁
+25        888.   ▇▆▃▁▁
+26         73    ▇▃▁▁▁
+27    2701303.   ▇▁▁▁▁
+28        528.   ▇▅▁▁▁
+29        317    ▁▇▆▂▁
+30         56    ▂▅▇▂▂
+31       4792    ▃▇▂▁▁

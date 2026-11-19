@@ -1,0 +1,269 @@
+#### 1. LA MUESTRA ####
+
+Base de análisis              : 39.305 
+  menos no departamentos      : 40 
+  menos barrios con < 100     : 370 
+Muestra de los modelos        : 38.895 avisos, 42 barrios
+
+# A tibble: 6 × 2
+  barrio_nom          n
+  <chr>           <int>
+1 Nueva Pompeya      86
+2 Versalles          79
+3 Paternal           76
+4 Villa Riachuelo    48
+5 Villa Soldati      42
+6 Villa Real         39
+
+
+#### 2. LOS CUATRO PASOS ####
+
+# A tibble: 5 × 6
+  paso                     beta_lm2    r2 r2_aj variables     n
+  <chr>                       <dbl> <dbl> <dbl>     <dbl> <int>
+1 1. Superficie               1.04  0.700 0.700         1 38895
+2 2. + características        1.12  0.792 0.792         6 38895
+3 3. + barrio                 0.959 0.876 0.876        47 38895
+4 4. + entorno                0.954 0.879 0.879        49 38895
+5 Latitud en vez de barrio    1.05  0.842 0.842         9 38895
+
+Modelo 4 con errores robustos HC1 (sin las dummies de barrio):
+                               Estimate  Std. Error     t value      Pr(>|t|)
+(Intercept)                7.9386447796 0.020436831 388.4479353  0.000000e+00
+lm2                        0.9543592092 0.006279721 151.9747891  0.000000e+00
+ambientes                 -0.0004932014 0.002634115  -0.1872361  8.514765e-01
+banos                      0.0786255901 0.002893281  27.1752362 4.118543e-161
+antiguedadHasta 20 años   -0.0782181485 0.003176251 -24.6259378 6.989766e-133
+antiguedad20 a 50 años    -0.3397463296 0.003424627 -99.2068058  0.000000e+00
+antiguedadMás de 50 años  -0.4090722009 0.004620714 -88.5300911  0.000000e+00
+dist_centro_km            -0.0247109880 0.001796242 -13.7570487  5.827585e-43
+publicado_porInmobiliaria  0.0618334800 0.002759097  22.4107630 1.555623e-110
+
+Un departamento 10% más grande, a igual barrio y características: 9,5 % más caro
+
+--- Modelo con latitud ---
+
+t test of coefficients:
+
+                             Estimate  Std. Error t value  Pr(>|t|)    
+(Intercept)                1.9713e+02  1.7347e+00 113.644 < 2.2e-16 ***
+lm2                        1.0471e+00  7.2150e-03 145.123 < 2.2e-16 ***
+ambientes                 -3.0970e-02  3.0451e-03 -10.170 < 2.2e-16 ***
+banos                      9.7073e-02  3.2563e-03  29.811 < 2.2e-16 ***
+antiguedadHasta 20 años   -7.1116e-02  3.6001e-03 -19.754 < 2.2e-16 ***
+antiguedad20 a 50 años    -3.4250e-01  3.7784e-03 -90.648 < 2.2e-16 ***
+antiguedadMás de 50 años  -4.3752e-01  5.1675e-03 -84.668 < 2.2e-16 ***
+dist_centro_km            -1.5926e-02  4.5444e-04 -35.046 < 2.2e-16 ***
+publicado_porInmobiliaria  6.7201e-02  3.1051e-03  21.642 < 2.2e-16 ***
+lat                        5.4701e+00  5.0034e-02 109.329 < 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Un kilómetro más al norte, a igual distancia al centro: 5,05 % más de precio
+
+
+#### 3. SESGO POR VARIABLE OMITIDA ####
+
+--- Paso 1 -> 2: cada característica entrando sola ---
+# A tibble: 3 × 3
+  variable   beta_lm2 cambio_solo
+  <chr>         <dbl>       <dbl>
+1 ambientes     1.37       0.328 
+2 banos         0.886     -0.152 
+3 antiguedad    1.11       0.0686
+
+--- Paso 1 -> 2: reparto exacto ---
+# A tibble: 5 × 5
+  termino                    gamma   delta  aporte bloque    
+  <chr>                      <dbl>   <dbl>   <dbl> <chr>     
+1 ambientes                -0.0672  1.97    0.133  ambientes 
+2 banos                     0.115   0.944  -0.108  banos     
+3 antiguedadHasta 20 años  -0.111  -0.0179 -0.002  antiguedad
+4 antiguedad20 a 50 años   -0.359   0.0558  0.02   antiguedad
+5 antiguedadMás de 50 años -0.444   0.0967  0.0429 antiguedad
+
+Suma de los aportes: 0.0855   Cambio de β, paso 1 -> 2: 0.0855 
+Correlación con log(m²): ambientes 0,875   baños 0,735 
+
+--- El coeficiente de ambientes, paso por paso (HC1) ---
+# A tibble: 3 × 5
+  paso       beta      ee       t        p
+  <chr>     <dbl>   <dbl>   <dbl>    <dbl>
+1 2     -0.0672   0.00334 -20.2   6.13e-90
+2 3     -0.00185  0.00264  -0.699 4.84e- 1
+3 4     -0.000493 0.00263  -0.187 8.52e- 1
+
+--- Paso 2 -> 3: el barrio ---
+Aporte del barrio al cambio de β: -0.1651   Cambio de β, paso 2 -> 3: -0.1651 
+El mismo cálculo sin controlar por características: -0.0686 
+
+Correlación entre la superficie promedio del barrio y su prima:
+  Pearson (la del gráfico)           : 0,79 
+  Spearman (por rangos)              : 0,66 
+  Pearson sin Puerto Madero          : 0,66 
+  Pearson sin Puerto Madero, Retiro y Recoleta: 0,62 
+  Pearson con la superficie condicional a ambientes, baños y antigüedad: 0,83 
+  Pearson en los 21 barrios de mayor prima: 0,78 
+  Pearson en los 21 barrios de menor prima: 0,22 
+  Por terciles de prima: caro 0,75  medio 0,02  barato -0,12 
+
+Parte de la varianza de log(m²) que está entre barrios: 7,0 %
+
+# A tibble: 42 × 7
+   barrio_nom        avisos m2_promedio m2_mediano lm2_cond  prima prima_pct
+   <chr>              <int>       <dbl>      <dbl>    <dbl>  <dbl>     <dbl>
+ 1 Puerto Madero        461       114.       106      0.321  0.824    128.  
+ 2 Palermo             6116        72.6       54      0.035  0.471     60.1 
+ 3 Belgrano            3268        74.0       56      0.042  0.413     51.2 
+ 4 Recoleta            2584        88.2       70      0.054  0.394     48.2 
+ 5 Retiro               930       109.        79      0.101  0.387     47.3 
+ 6 Colegiales          1109        61.9       51     -0.008  0.363     43.7 
+ 7 Núñez               1469        60.5       50     -0.009  0.346     41.3 
+ 8 Villa Devoto         902        75.9       64.5    0.017  0.243     27.5 
+ 9 Villa Urquiza       1626        57.5       52     -0.029  0.242     27.4 
+10 Coghlan              265        60.9       54      0.001  0.229     25.8 
+11 Chacarita            456        52.1       45     -0.033  0.209     23.2 
+12 Villa Ortúzar        419        56.4       51      0.006  0.193     21.3 
+13 Saavedra             859        56.6       48     -0.013  0.188     20.7 
+14 Caballito           2825        69.7       60     -0.02   0.185     20.3 
+15 Villa Crespo        1525        55.8       46     -0.043  0.172     18.8 
+16 Almagro             1822        57.1       49     -0.041  0.134     14.4 
+17 Agronomía            168        62.7       50      0.031  0.109     11.5 
+18 Villa del Parque     592        62.1       51     -0.02   0.096     10.1 
+19 Monserrat            863        59.4       45      0.009  0.092      9.65
+20 Parque Chas          197        46.1       40     -0.054  0.089      9.36
+21 Parque Chacabuco     480        60.8       56     -0.022  0.074      7.67
+22 Villa Pueyrredón     274        52.4       47.5   -0.048  0.072      7.47
+23 San Telmo            375        59.8       50     -0.01   0.051      5.28
+24 San Nicolás          868        60.5       48     -0.024  0.029      2.97
+25 Barracas             700        61.7       56     -0.029  0.011      1.09
+26 Balvanera           1678        59.9       51     -0.047  0          0   
+27 Villa Gral. Mitre    276        55.0       49     -0.047 -0.012     -1.23
+28 Boedo                389        51.7       45     -0.059 -0.019     -1.92
+29 Flores              1403        64.3       55     -0.037 -0.02      -2.01
+30 Monte Castro         240        53.4       47     -0.011 -0.024     -2.35
+31 Villa Santa Rita     213        50.6       44     -0.045 -0.031     -3.07
+32 Villa Luro           428        50.9       47     -0.045 -0.045     -4.44
+33 Liniers              609        54.8       50     -0.081 -0.049     -4.76
+34 Constitución         477        48.5       40     -0.064 -0.07      -6.74
+35 San Cristóbal        531        47.5       42     -0.076 -0.081     -7.78
+36 Parque Patricios     252        49.2       44     -0.067 -0.092     -8.80
+37 Vélez Sarsfield      188        53.5       48     -0.045 -0.118    -11.2 
+38 Mataderos            298        55.6       47.5   -0.042 -0.123    -11.5 
+39 Floresta             265        55.6       52     -0.063 -0.123    -11.6 
+40 Boca                 192        55.4       51.5    0.005 -0.173    -15.9 
+41 Parque Avellaneda    155        57.6       52      0.025 -0.215    -19.3 
+42 Villa Lugano         148        54.3       52     -0.1   -0.263    -23.1 
+
+
+#### 4. IDENTIDAD Y APORTE DE CADA BLOQUE ####
+
+dif_coef_resto   dif_beta_lm2   dif_residuos     dif_ee_hc1 
+      2.18e-13       1.00e+00       3.80e-11       1.25e-14 
+# A tibble: 6 × 10
+  dependiente bloque                                         caida_scr   sct delta_r2 r2_parcial  wald_F   gl1   gl2        p
+  <chr>       <chr>                                              <dbl> <dbl>    <dbl>      <dbl>   <dbl> <dbl> <int>    <dbl>
+1 precio      Superficie                                       1739    16970 0.102       0.458   23100       1 38845 0       
+2 precio_m2   Superficie                                          3.98  5111 0.000778    0.00193    52.8     1 38845 3.72e-13
+3 precio      Barrio (41 dummies)                              1367    16970 0.0805      0.399     617.     41 38845 0       
+4 precio_m2   Barrio (41 dummies)                              1367     5111 0.267       0.399     617.     41 38845 0       
+5 precio      Características (ambientes, baños, antigüedad)    969.   16970 0.0571      0.320    3480       5 38845 0       
+6 precio_m2   Características (ambientes, baños, antigüedad)    969.    5111 0.190       0.320    3480       5 38845 0       
+
+R² del modelo completo: log(precio) 0,879   log(precio/m²) 0,597 
+
+--- H0: el barrio no agrega nada, controlando superficie y características ---
+Wald test
+
+Model 1: lp ~ lm2 + ambientes + banos + antiguedad
+Model 2: lp ~ lm2 + ambientes + banos + antiguedad + barrio
+  Res.Df Df      F    Pr(>F)    
+1  38888                        
+2  38847 41 651.18 < 2.2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+#### 5. SUPUESTOS ####
+
+
+	RESET test
+
+data:  m4
+RESET = 294.39, df1 = 2, df2 = 38843, p-value < 2.2e-16
+
+
+	studentized Breusch-Pagan test
+
+data:  m4
+BP = 1823.4, df = 49, p-value < 2.2e-16
+
+Avisos con distancia de Cook > 4/n: 2.073 (5,3%) 
+De Puerto Madero: 31 de 461 
+# A tibble: 7 × 3
+  termino                       con     sin
+  <chr>                       <dbl>   <dbl>
+1 lm2                        0.954   0.938 
+2 ambientes                 -0.0005  0.0102
+3 banos                      0.0786  0.0737
+4 dist_centro_km            -0.0247 -0.026 
+5 publicado_porInmobiliaria  0.0618  0.063 
+6 barrioPuerto Madero        0.832   0.868 
+7 barrioPalermo              0.538   0.542 
+R² con y sin: 0,879 0,902 
+Prima de Puerto Madero con y sin influyentes: 129,7 % -> 138,1 %
+Brecha entre los barrios extremos con y sin influyentes: 2,60 -> 2,71 
+
+--- Sensibilidad: precio winsorizado en el p99 ---
+p99: US$ 990.000  avisos por encima: 379  de Puerto Madero: 66 de 461 
+Prima de Puerto Madero: original 129,7 % winsorizado 124,0 %
+Elasticidad: original 0,954  winsorizado 0,936 
+
+--- GVIF ---
+# A tibble: 7 × 4
+  variable        gvif    gl gvif_aj
+  <chr>          <dbl> <dbl>   <dbl>
+1 lm2             5.77     1    2.4 
+2 ambientes       5.23     1    2.29
+3 banos           2.29     1    1.51
+4 antiguedad      1.53     3    1.07
+5 barrio         31.2     41    1.04
+6 dist_centro_km 24.5      1    4.95
+7 publicado_por   1.09     1    1.04
+El resto del modelo explica el 95,9 % de la distancia al Obelisco (el barrio solo, el 95,9 %)
+
+--- RESET: el modelo completo con log(m²)² ---
+           Estimate  Std. Error  t value     Pr(>|t|)
+lm2      0.58802398 0.035078170 16.76325 7.542271e-63
+I(lm2^2) 0.04443156 0.004263795 10.42066 2.155642e-25
+
+	RESET test
+
+data:  m4q
+RESET = 205.98, df1 = 2, df2 = 38842, p-value < 2.2e-16
+
+
+Elasticidad según el tamaño (sin cuadrado: 0,954):
+# A tibble: 5 × 2
+     m2 elasticidad
+  <dbl>       <dbl>
+1    35       0.904
+2    50       0.936
+3    70       0.966
+4   100       0.997
+5   150       1.03 
+Avisos entre 35 y 150 m²: 77,6 %
+
+H0 del barrio con el cuadrado: F = 636,04  (sin cuadrado: 651,18 )
+
+ΔR² de cada bloque con el cuadrado:
+# A tibble: 3 × 3
+  bloque          precio precio_m2
+  <chr>            <dbl>     <dbl>
+1 Superficie       10.3       0.26
+2 Barrio            7.95     26.4 
+3 Características   5.59     18.6 
+R² con el cuadrado: 0,8792  sin: 0,8787 
+
+Brecha entre el barrio de prima más alta (Puerto Madero) y el de prima más baja (Boca), modelo completo: 2,60 veces
+números guardados: 08_numeros.csv 

@@ -1,0 +1,15 @@
+nombre,valor
+tramo_max_norte,3 a 6 km
+tramo_max_sur,3 a 6 km
+tramo_min_norte,Hasta 3 km
+tramo_min_sur,Hasta 3 km
+min_cerca_norte,2875
+min_cerca_sur,2089.28571428571
+avisos_min,2633
+avisos_max,6560
+pct_mas50_cerca,26.6383280198371
+pct_mas50_resto_max,10.2527500209925
+brecha_estrenar,1.32994536907447
+brecha_hasta20,1.31973072215422
+brecha_20a50,1.3968253968254
+brecha_mas50,1.47196261682243

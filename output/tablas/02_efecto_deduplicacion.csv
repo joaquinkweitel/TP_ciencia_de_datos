@@ -1,0 +1,4 @@
+version,avisos,precio_medio,precio_mediano,precio_m2_medio,precio_m2_mediano,m2_mediano,desvio_precio_m2,pct_palermo,pct_inmobiliaria,pct_a_estrenar
+Base cruda,40168,198481,140000,2880.8,2686.6,53,1083.1,15.53,26.74,38.29
+Base de análisis,39305,198218,140000,2885.4,2692.3,53,1084,15.57,26.87,38.57
+Sin ningún repetido (referencia),39146,198446,140000,2881,2686.9,53,1082.4,15.48,26.64,38.32

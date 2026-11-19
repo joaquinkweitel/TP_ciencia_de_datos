@@ -1,0 +1,10 @@
+variable,descripcion,tipo,valores,nulos
+barrio,"Barrio oficial de CABA, asignado geocodificando la dirección del aviso",Categórica,48 categorías,0
+comuna,Comuna de CABA a la que pertenece el barrio,Categórica,"15 comunas, de la 1 a la 15",0
+lat,Latitud de la dirección geocodificada. La usamos para el eje norte-sur,Numérica (grados),Coordenadas dentro de la jurisdicción de la Ciudad,0
+long,Longitud de la dirección geocodificada,Numérica (grados),Coordenadas dentro de la jurisdicción de la Ciudad,0
+dist_centro_m,Distancia en línea recta al Obelisco,Numérica (m),de 47 a 14.466,0
+geocod_score,Calidad con que ArcGIS ubicó la dirección. Un puntaje alto no garantiza el barrio correcto,Numérica (0 a 100),"de 80,03 a 100, nunca por debajo de 80",0
+publicado_por,Si el aviso lo publica una inmobiliaria o un particular,Categórica,2 categorías,0
+inmobiliaria,Nombre de la inmobiliaria que publica el aviso,Texto,96 inmobiliarias distintas,28.745
+valor_m2_usd_barrio,"Valor de referencia del m² del barrio, de fuente externa al portal",Numérica (US$/m²),"de 899 a 4.792, un valor por barrio",0

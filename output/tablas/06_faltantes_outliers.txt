@@ -1,0 +1,382 @@
+Avisos en la base de análisis: 39.305 
+
+
+#### 1. FALTANTES POR VARIABLE ####
+
+# A tibble: 18 × 3
+   variable             n_na pct_na
+   <chr>               <int>  <dbl>
+ 1 inmobiliaria        28745   73.1
+ 2 precio_usd              0    0  
+ 3 precio_m2_usd           0    0  
+ 4 metros_cubiertos        0    0  
+ 5 ambientes               0    0  
+ 6 dormitorios             0    0  
+ 7 banos                   0    0  
+ 8 tipo_depto              0    0  
+ 9 antiguedad_grupo        0    0  
+10 a_estrenar              0    0  
+11 barrio                  0    0  
+12 comuna                  0    0  
+13 lat                     0    0  
+14 long                    0    0  
+15 dist_centro_m           0    0  
+16 geocod_score            0    0  
+17 publicado_por           0    0  
+18 valor_m2_usd_barrio     0    0  
+
+Variables con al menos un NA: 1 de 18 
+Filas sin ningún NA en las 18 variables: 10.560 
+
+
+#### 2. LOS FALTANTES SON ESTRUCTURALES ####
+
+--- inmobiliaria: la indicadora es publicado_por ---
+              tiene_inmobiliaria
+publicado_por  FALSE  TRUE
+  Inmobiliaria     0 10560
+  Particular   28745     0
+¿Son exactamente las mismas filas?: TRUE 
+
+--- antiguedad_max: la indicadora es antiguedad_grupo ---
+                 antiguedad_max_NA
+categoria_abierta FALSE  TRUE
+            FALSE 34717     0
+            TRUE      0  4588
+¿Son exactamente las mismas filas?: TRUE 
+
+Faltantes sobre la base de análisis (39.305 avisos):
+  inmobiliaria  : 28.745 (73,1%) 
+  antiguedad_max: 4.588 (11,7%) 
+
+
+#### 3. DÓNDE SE CONCENTRAN LOS FALTANTES ####
+
+# A tibble: 42 × 4
+   barrio_nom        avisos pct_particular precio_m2
+   <chr>              <int>          <dbl>     <dbl>
+ 1 Mataderos            299           92.0     2093.
+ 2 Liniers              609           92.0     2286.
+ 3 Agronomía            168           91.7     2469.
+ 4 Villa Pueyrredón     274           90.1     2444.
+ 5 Boca                 192           89.6     1593.
+ 6 Villa del Parque     592           87.8     2369.
+ 7 Parque Chas          197           87.8     2547.
+ 8 Villa Devoto         903           86.4     2838.
+ 9 Vélez Sarsfield      188           83.5     1866.
+10 Floresta             265           83.4     1733.
+11 Villa Lugano         148           83.1     1509.
+12 Boedo                389           83.0     2080 
+13 Parque Avellaneda    155           81.9     1750 
+14 Villa Gral. Mitre    276           81.9     2085.
+15 Flores              1404           81.6     2121.
+16 Villa Urquiza       1626           80.9     2946.
+17 Monte Castro         240           80.4     2183.
+18 Villa Santa Rita     213           79.8     2206.
+19 Barracas             700           79.4     2233.
+20 Villa Ortúzar        419           78.5     2843.
+21 Puerto Madero        461           78.3     5676.
+22 Parque Chacabuco     481           78.2     2439.
+23 Caballito           2827           77.9     2558.
+24 San Telmo            376           77.4     2085.
+25 Parque Patricios     254           77.2     2023.
+26 San Cristóbal        531           76.3     1970.
+27 Saavedra             859           76.0     2843.
+28 Villa Luro           428           75.7     2248.
+29 San Nicolás          872           74.9     1877.
+30 Retiro               933           74.1     2750 
+31 Balvanera           1684           73.5     1833.
+32 Chacarita            456           73.2     2810.
+33 Coghlan              265           72.8     2869.
+34 Constitución         479           72.2     1858.
+35 Recoleta            2589           71.8     2809.
+36 Almagro             1822           70.6     2411.
+37 Monserrat            863           69.8     2185.
+38 Villa Crespo        1527           69.5     2652.
+39 Colegiales          1111           68.2     3266.
+40 Núñez               1469           64.4     3308.
+41 Palermo             6120           63.7     3553.
+42 Belgrano            3271           61.7     3375 
+
+Correlación entre el % de particulares del barrio y su precio por m²:
+  Pearson : -0,358 
+  Spearman: -0,392 
+
+--- Por decil de precio ---
+# A tibble: 10 × 4
+   decil avisos precio_mediano pct_particular
+   <int>  <int>          <dbl>          <dbl>
+ 1     1   3931         62000            83.7
+ 2     2   3931         79000            78.8
+ 3     3   3931         95000            76.2
+ 4     4   3931        112000            75.0
+ 5     5   3931        130000            73.7
+ 6     6   3930        152000            70.4
+ 7     7   3930        180000            69.4
+ 8     8   3930        224858.           67.9
+ 9     9   3930        298000            68.1
+10    10   3930        538390            68.2
+
+
+#### 4. UN FALTANTE DISFRAZADO ####
+
+# A tibble: 3 × 3
+  publicacion_reciente     n   pct
+  <chr>                <int> <dbl>
+1 sin dato             35910 89.4 
+2 esta semana           3009  7.49
+3 hoy                   1249  3.11
+
+NA formales que detecta R en esa variable: 0 
+Faltantes reales, contando la categoría 'sin dato': 35.910 (89,4%) 
+
+--- Búsqueda de otros códigos sospechosos ---
+  id                             1 valores en 9999
+  metros_cubiertos              81 valores en 99
+  metros_por_ambiente            1 valores en 99
+  geocod_score                   1 valores en 99
+  paradas_colectivo_1000m      461 valores en 99
+Ceros en variables donde un cero sería imposible:
+  precio_usd           0
+  metros_cubiertos     0
+  ambientes            0
+  banos                0
+
+
+#### 5. OUTLIERS: TRES REGLAS, DOS ESCALAS ####
+
+# A tibble: 4 × 7
+  variable                  iqr_orig iqr_log z_orig z_log z_rob_orig z_rob_log
+  <chr>                        <int>   <int>  <int> <int>      <int>     <int>
+1 Precio publicado (US$)        3287     723    842   291       3884       482
+2 Precio por m² (US$)           1311      91    531     0       1136         0
+3 Superficie cubierta (m²)      2696     548    839   253       2942       318
+4 Distancia al Obelisco (m)        0     654      0   286          0       654
+
+En porcentaje de los 39.305 avisos:
+# A tibble: 4 × 7
+  variable                  iqr_orig iqr_log z_orig z_log z_rob_orig z_rob_log
+  <chr>                        <dbl>   <dbl>  <dbl> <dbl>      <dbl>     <dbl>
+1 Precio publicado (US$)        8.36    1.84   2.14  0.74       9.88      1.23
+2 Precio por m² (US$)           3.34    0.23   1.35  0          2.89      0   
+3 Superficie cubierta (m²)      6.86    1.39   2.13  0.64       7.49      0.81
+4 Distancia al Obelisco (m)     0       1.66   0     0.73       0         1.66
+
+--- ¿Marcan a los mismos avisos? (precio_usd) ---
+Marcados por al menos una combinación: 3.889 
+Marcados por las seis               : 291 
+La combinación más laxa sola cubre: 3.884 de esos 3.889 
+¿Cada combinación está contenida en la de más marcados?:
+  iqr_orig     z_orig z_rob_orig    iqr_log      z_log  z_rob_log 
+      TRUE       TRUE       TRUE      FALSE       TRUE       TRUE 
+# A tibble: 1 × 6
+  iqr_orig z_orig z_rob_orig iqr_log z_log z_rob_log
+     <int>  <int>      <int>   <int> <int>     <int>
+1     3287    842       3884     723   291       482
+
+Coincidencia entre pares de reglas (proporción de acuerdo):
+           iqr_orig z_orig z_rob_orig iqr_log z_log z_rob_log
+iqr_orig       1.00   0.49       0.91    0.45  0.29      0.37
+z_orig         0.49   1.00       0.45    0.92  0.58      0.75
+z_rob_orig     0.91   0.45       1.00    0.41  0.26      0.34
+iqr_log        0.45   0.92       0.41    1.00  0.63      0.81
+z_log          0.29   0.58       0.26    0.63  1.00      0.78
+z_rob_log      0.37   0.75       0.34    0.81  0.78      1.00
+
+
+#### 6. LÍMITES DE LA REGLA DE 1,5 RIC ####
+
+# A tibble: 4 × 10
+  variable                      q1      q3     ric lim_inf lim_sup  minimo alcanzable bajos altos
+  <chr>                      <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl> <lgl>      <int> <int>
+1 Precio publicado (US$)    95000  224829  129829  -99744. 419572. 23000   FALSE          0  3287
+2 Precio por m² (US$)        2118.   3438.   1320.    138.   5417.  1011.  TRUE           0  1311
+3 Superficie cubierta (m²)     38      78      40     -22     138     15   FALSE          0  2696
+4 Distancia al Obelisco (m)  3260.   8799.   5538.  -5047.  17106.    46.7 FALSE          0     0
+
+Lectura: cuando el límite inferior es negativo, que no haya atípicos
+bajos no informa nada, porque ningún valor puede caer ahí. Solo informa
+cuando el límite es positivo y alcanzable.
+
+
+#### 7. ¿ERRORES O GENUINOS? ####
+
+Avisos cuyo título los identifica como otra cosa que un departamento: 40 (0,10% de la base) 
+
+--- Qué tipo de unidad son ---
+# A tibble: 5 × 2
+  tipo         n
+  <chr>    <int>
+1 oficina     24
+2 local        8
+3 terreno      4
+4 cochera      3
+5 deposito     1
+
+--- Los 40 avisos, uno por uno ---
+# A tibble: 40 × 7
+      id metros_cubiertos ambientes precio_usd precio_m2_usd barrio_nom      
+   <dbl>            <dbl>     <dbl>      <dbl>         <dbl> <chr>           
+ 1 39414              400         1     600000         1500  Villa Crespo    
+ 2 35935              252         5     650000         2579. Retiro          
+ 3 38324              202         6     270000         1337. San Nicolás     
+ 4 17704              185         1     620300         3353. Colegiales      
+ 5 18674              170         1     410700         2416. Constitución    
+ 6 41196              165         3     594000         3600  Villa Devoto    
+ 7 39154              164         1     562100         3427. Villa Crespo    
+ 8 38369              152         1     210000         1382. San Telmo       
+ 9 38264              130         4     180000         1385. San Nicolás     
+10 10372              109         1     550000         5046. Belgrano        
+11 27379              107         3     330000         3084. Palermo         
+12 16147              103         4     353087         3428. Caballito       
+13 25233              100         1     390000         3900  Palermo         
+14 34949               96         5     195000         2031. Recoleta        
+15 28614               95         4     240000         2526. Palermo         
+16  8421               94         3     280000         2979. Balvanera       
+17 17705               92         1     319700         3475  Colegiales      
+18 30018               87         5     170000         1954. Palermo         
+19 21753               80         4      95000         1188. Mataderos       
+20 19006               76         3     148000         1947. Constitución    
+21 35551               75         4     240000         3200  Retiro          
+22 33854               73         3     220000         3014. Recoleta        
+23  9035               70         4     140000         2000  Balvanera       
+24 32927               65         2     237930         3660. Recoleta        
+25 37757               65         2     160000         2462. San Nicolás     
+26 37516               61         1     130000         2131. San Nicolás     
+27 35387               54         2      89000         1648. Retiro          
+28 11426               52         2     130000         2500  Belgrano        
+29  7867               49         2     129000         2633. Balvanera       
+30 32557               44         1     142000         3227. Recoleta        
+31 32832               40         2     144000         3600  Recoleta        
+32 31668               34         2      94000         2765. Parque Patricios
+33  7515               33         1      36000         1091. Balvanera       
+34 14225               28         1      69522         2483. Caballito       
+35 19371               27         1      68607         2541  Flores          
+36  7694               26         2      28500         1096. Balvanera       
+37 31603               26         1      72500         2788. Parque Patricios
+38 10577               25         1      43500         1740  Belgrano        
+39  7724               22         1      33000         1500  Balvanera       
+40 30949               21         2      49000         2333. Parque Chacabuco
+   titulo_aviso                                                                          
+   <chr>                                                                                 
+ 1 deposito en venta en villa crespo 400 metros en julian alvar                          
+ 2 cochera fija - seguridad 24hs - recoleta - 5 ambientes                                
+ 3 oficina en recoleta                                                                   
+ 4 local venta colegiales pozo                                                           
+ 5 local venta san telmo                                                                 
+ 6 oficina en venta premium en av libertador                                             
+ 7 oficina en venta en villa crespo                                                      
+ 8 venta oficina dpto loft estudio luminoso en san telmo bajas expensas.                 
+ 9 venta oficina en microcentro apto vivienda                                            
+10 local comercial en edificio live arcos, en belgrano - newevo negocios inmobiliarios   
+11 local/depto apto profesional a la calle c/cochera                                     
+12 local - caballito                                                                     
+13 local en venta a estrenar 130 m2 totales - palermo                                    
+14 venta oficina / departamento 5 ambientes en recoleta                                  
+15 oficina / departamento / apto profesional / vista a plaza / palermo chico             
+16 oficina de 3 ambientes en venta ubicado en balvanera                                  
+17 local venta colegiales pozo                                                           
+18 oficina o consultorios palermo 5 amb patio balcon                                     
+19 venta oficina 4 amb en mataderos                                                      
+20 oficina/departamento con cochera en zona uade                                         
+21 cochera fija - seguridad 24hs - recoleta - 4 ambientes                                
+22 cochera fija, baulera, seguridad 24hs, muy luminoso, 3ambientes recoleta.             
+23 venta oficina de 4 ambientes en balvanera para reciclar como vivienda apto profesional
+24 terreno - recoleta                                                                    
+25 venta oficina o departamento tucuman al 800                                           
+26 venta oficina 2 ambientes en san nicolás                                              
+27 oficina venta retiro apto vivienda 2 balc                                             
+28 oficina - nuñez - 115m2 equipada                                                      
+29 oficina de 2 ambientes en venta ubicado en balvanera                                  
+30 oficina en recoleta para venta                                                        
+31 terreno - recoleta                                                                    
+32 oficina en venta de 2 ambientes a estrenar                                            
+33 oficina en balvanera                                                                  
+34 terreno - flores                                                                      
+35 terreno - flores                                                                      
+36 oficina de 2 ambientes en venta en balvanera                                          
+37 oficina - 1 amb- pque.patricos - balcon, amenities, a/profes dist.tecnol. apto credito
+38 venta oficina sobre av. cabildo 2200. solo uso profesional exclusivo                  
+39 venta local a la calle luminoso cerca de subtes- once - balvanera                     
+40 oficina en planta alta al frente a 4/c de 9 de julio                                  
+
+--- ¿Son extremos? Comparación con el resto ---
+# A tibble: 2 × 5
+  no_es_depto avisos m2_mediano precio_mediano precio_m2_mediano
+  <lgl>        <int>      <dbl>          <dbl>             <dbl>
+1 FALSE        39265       53           140000             2692.
+2 TRUE            40       75.5         175000             2513.
+
+--- Los avisos más caros: ¿errores o Puerto Madero? ---
+# A tibble: 14 × 6
+      id precio_usd metros_cubiertos precio_m2_usd barrio_nom      
+   <dbl>      <dbl>            <dbl>         <dbl> <chr>           
+ 1 30545    2900000              400         7250  Palermo         
+ 2 32126    2800000              394         7107. Puerto Madero   
+ 3 30513    2600000              385         6753. Palermo         
+ 4 41160    2600000              400         6500  Villa del Parque
+ 5 30710    2500000              346         7225. Palermo         
+ 6 32311    2400000              364         6593. Puerto Madero   
+ 7 41165    2400000              359         6685. Villa del Parque
+ 8 41167    2400000              377         6366. Villa del Parque
+ 9 42059    2350000              360         6528. Villa Devoto    
+10 29409    2300000              322         7143. Palermo         
+11 30633    2300000              344         6686. Palermo         
+12 32341    2300000              312         7372. Puerto Madero   
+13 32361    2300000              319         7210. Puerto Madero   
+14 32388    2300000              320         7188. Puerto Madero   
+   titulo_aviso                                                                                    
+   <chr>                                                                                           
+ 1 departamento 5 ambientes en venta palermo                                                       
+ 2 departamentos venta puerto madero                                                               
+ 3 departamento venta penthouse, 6 ambientes , 5 cocheras. full amenities. quantum palermo         
+ 4 5 amb. c/dep - 400 m2 - a reciclar - piso alto - 3 coch - libertador 4444                       
+ 5 departamentos venta palermo                                                                     
+ 6 madero center excelente penthouse de 3 suites y dep. de servicio - vista al dique - 2 cocheras !
+ 7 departamentos 4 dormitorios - venta                                                             
+ 8 departamento 5 ambientes, 358 m2 totales en torre de gran categoria - palermo                   
+ 9 departamento vista rio 5 ambientes torre quantum bellini libertador- piso alto                  
+10 departamento 3 dormitorios en suite, terraza, pileta, cochera y baulera. palermo chico.         
+11 aguado y castilla palermo chico terraza y pileta propias 2 cocheras -                           
+12 departamentos venta puerto madero                                                               
+13 departamentos venta puerto madero                                                               
+14 departamento en duplex mulieris cinco ambientes                                                 
+
+--- Los de mayor precio por m² ---
+# A tibble: 11 × 5
+      id precio_m2_usd precio_usd metros_cubiertos barrio_nom   
+   <dbl>         <dbl>      <dbl>            <dbl> <chr>        
+ 1 12174         7375      590000               80 Belgrano     
+ 2 31986         7375      590000               80 Puerto Madero
+ 3 13115         7375.    1910000              259 Belgrano     
+ 4 32187         7372.    1150000              156 Puerto Madero
+ 5 32341         7372.    2300000              312 Puerto Madero
+ 6 12805         7368.    1400000              190 Belgrano     
+ 7 28175         7368.     700000               95 Palermo      
+ 8 29289         7362.    1200000              163 Palermo      
+ 9 32112         7360      920000              125 Puerto Madero
+10 32121         7360      920000              125 Puerto Madero
+11 32140         7360      920000              125 Puerto Madero
+
+Avisos de Puerto Madero entre los 100 de mayor precio por m²: 47 
+
+
+#### 8. IMPACTO DE CADA ESTRATEGIA ####
+
+# A tibble: 4 × 8
+  version                              n  media mediana desvio    p5    p95 precio_m2_med
+  <chr>                            <dbl>  <dbl>   <dbl>  <dbl> <dbl>  <dbl>         <dbl>
+1 Base de análisis                 39305 198218  140000 191676 62000 537900          2692
+2 Sin los que no son departamentos 39265 198179  140000 191684 62000 535582          2692
+3 Winsorizado p1-p99               39305 194269  140000 165602 62000 537900          2692
+4 Sin atípicos por 1,5 RIC         36018 153257  130000  81212 60000 329000          2605
+
+La señal de alerta de la clase 13: si la media se mueve mucho y la
+mediana casi no, los extremos estaban tirando de la media. Hay que
+confirmar que son errores antes de sacarlos.
+
+Distancia: atípicos en log 654 todos a menos de 735 m. Asimetría: 0.24 original, -1.01 log
+Precio en log: atípicos por abajo 5 (menos de US$ 26093 )
+números guardados: 06_numeros.csv 
+
+Base actualizada con las indicadoras: publica_inmobiliaria, antiguedad_abierta, no_es_depto

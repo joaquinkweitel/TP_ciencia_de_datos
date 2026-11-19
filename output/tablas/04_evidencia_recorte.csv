@@ -1,0 +1,6 @@
+Variable,Mínimo,Máximo,Avisos en el máximo,Qué muestra
+metros_cubiertos,15,400,11,Ningún aviso baja de 15 m² ni supera los 400 m²
+ambientes,1,8,60,El máximo es 8 y no hay nada por encima
+dormitorios,0,4,1.480,El 0 son monoambientes. El 4 no es cuatro: agrupa todo lo que tenga cuatro o más
+geocod_score,"80,03",100,2.937,La calidad de la geocodificación nunca baja de 80 sobre 100
+precio_usd,23.000,2.900.000,1,El máximo cae en un valor redondo y hay un solo aviso ahí
