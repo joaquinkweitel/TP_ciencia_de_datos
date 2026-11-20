@@ -29,7 +29,7 @@ n_avisos <- nrow(base)
 ficha <- tribble(
   ~campo, ~valor,
   "Nombre",              "Avisos de venta de departamentos en la Ciudad de Buenos Aires",
-  "Fuente",              "Publicaciones de MercadoLibre Argentina, scrapeadas por el docente",
+  "Fuente",              "Publicaciones de MercadoLibre Argentina, relevadas por el docente",
   "Qué representa",      "La oferta de departamentos en venta publicada en el portal, no el stock de viviendas ni las operaciones cerradas",
   "Unidad de observación", "El aviso publicado. Una misma vivienda puede aparecer en más de una fila",
   "Período",             "Corte transversal de noviembre de 2024. La base no tiene variable de fecha",
@@ -335,5 +335,38 @@ correlaciones <- tibble(
 
 write_csv(correlaciones, "output/tablas/04_correlaciones.csv")
 print(correlaciones, width = Inf)
+
+
+# =============================================================================
+# 9. LA FICHA Y LAS VARIABLES COMO IMAGEN (presentación final)
+# =============================================================================
+# En la instancia 1 estas dos tablas se armaban en la presentación a partir de
+# los CSV. Para la final salen como imagen, con tabla_png() y guardar_tabla(),
+# igual que las otras 18 (t01 a t18): misma paleta, misma tipografía y su
+# nombre adentro. Siguen la numeración: t19 la ficha, t20 las variables.
+
+t19 <- ficha |> rename(Campo = campo, Descripción = valor)
+guardar_tabla(tabla_png(t19, anchos = c(1.5, 6), alinear = c("izq", "izq")),
+              "t19_ficha_base.png", ancho = 10.5)
+
+# Las dos tablas de variables van en una sola imagen, como en la diapositiva:
+# una fila de encabezado por bloque, en terracota, y debajo sus variables.
+bloque_t20 <- function(bloque_id, titulo) {
+  bind_rows(
+    tibble(Variable = titulo, Descripción = "", Tipo = "", `Valores que toma` = "", Nulos = ""),
+    resumen_variables |>
+      filter(bloque == bloque_id) |>
+      transmute(Variable = variable, Descripción = descripcion, Tipo = tipo,
+                `Valores que toma` = valores, Nulos = nulos)
+  )
+}
+t20 <- bind_rows(bloque_t20("vivienda", "Describen el departamento"),
+                 bloque_t20("ubicacion", "Ubican el aviso en la ciudad"))
+filas_bloque <- which(t20$Descripción == "")
+stopifnot(length(filas_bloque) == 2, nrow(t20) == nrow(resumen_variables) + 2)
+guardar_tabla(tabla_png(t20, anchos = c(1.7, 5.2, 1.6, 3.4, 0.7),
+                        alinear = c("izq", "izq", "izq", "izq", "der"),
+                        destacar = filas_bloque, size = 3, size_enc = 3.2),
+              "t20_variables.png", ancho = 14)
 
 cat("\nListo. Tablas en output/tablas/\n")

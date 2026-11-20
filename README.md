@@ -8,18 +8,18 @@ Grupo 8: Joaquín Kweitel (916425) y Sofía Colombo (916997).
 
 ## 1. Objetivo e hipótesis de trabajo
 
-Este trabajo estudia de qué depende el precio publicado de un departamento en venta en la Ciudad de Buenos Aires: cuánto se asocia con lo que es la vivienda —superficie, ambientes, baños, antigüedad— y cuánto con dónde está.
+Este trabajo estudia de qué depende el precio publicado de un departamento en venta en la Ciudad de Buenos Aires: cuánto se asocia con lo que es el departamento —superficie, ambientes, baños, antigüedad— y cuánto con dónde está.
 
 Hipótesis. Dos departamentos de características equivalentes, con la misma superficie, los mismos ambientes, los mismos baños y la misma antigüedad, tienen precios sistemáticamente distintos según el barrio en el que se publican, y esa diferencia es grande en relación con lo que aporta el tamaño.
 
-Los resultados la apoyan y la reformulan. La apoyan: a igual vivienda, el precio pedido en el barrio más caro es 3,0 veces el del más barato. Y la reformulan, porque la pregunta de cuál de las dos variables pesa más estaba mal planteada: no compiten. La superficie está contenida en el precio total por construcción, y una vez que se divide el precio por los metros apenas aporta nada, 0,08 puntos de R². El barrio es el que da cuenta de esa variación: 26,7 puntos.
+Los resultados la apoyan y la reformulan. La apoyan: a igual departamento, el precio pedido en el barrio más caro es 3,0 veces el del más barato. Y la reformulan, porque la pregunta de cuál de las dos variables pesa más estaba mal planteada: no compiten. La superficie está contenida en el precio total por construcción, y una vez que se divide el precio por los metros apenas aporta nada, 0,08 puntos de R². El barrio es el que da cuenta de esa variación: 26,7 puntos.
 
 
 ## 2. La base de datos y por qué la elegimos
 
 Avisos de venta de departamentos de MercadoLibre Argentina, relevados en noviembre de 2024: 40.168 avisos en la base cruda y 39.305 después de quitar las republicaciones, distribuidos en los 48 barrios de la ciudad. Los modelos trabajan sobre 38.895 avisos en los 42 barrios con al menos 100 publicaciones.
 
-La elegimos porque reúne en una misma fila el precio, las características de la vivienda y la ubicación —barrio, comuna y coordenadas—, que es exactamente lo que hace falta para separar el peso de una cosa del peso de la otra. Y porque tiene avisos suficientes para comparar barrios entre sí con cierta solidez.
+La elegimos porque reúne en una misma fila el precio, las características del departamento y la ubicación —barrio, comuna y coordenadas—, que es exactamente lo que hace falta para separar el peso de una cosa del peso de la otra. Y porque tiene avisos suficientes para comparar barrios entre sí con cierta solidez.
 
 Lo que la base es y lo que no: representa la oferta publicada, no el stock de viviendas ni las operaciones cerradas; los precios son los pedidos, no los pactados; y es un corte de un solo mes, sin dimensión temporal.
 
@@ -78,7 +78,7 @@ TP_ciencia_de_datos/
 │   └── base_analisis.csv          (la arma el 02 y le agrega marcas el 06)
 ├── output/
 │   ├── tablas/             tablas de resultados: CSV, tablas como imagen
-│   │                       (t01 a t18), registros de diagnóstico (.txt),
+│   │                       (t01 a t20), registros de diagnóstico (.txt),
 │   │                       números clave (0X_numeros.csv) y textos
 │   └── graficos/           gráficos: PNG de las instancias 1 y 2 (g1 a g18), la curva de Lorenz (g19),
 │                           la prima de cada barrio contra su latitud (g20)
@@ -171,7 +171,7 @@ kmeans con 50 arranques, la estadística gap y la estabilidad por remuestreo).
 | `01b_diagnostico_profundo.R` | Los cinco chequeos que quedaron abiertos en el 01. | `tablas/01b_diagnostico_profundo.txt` |
 | `02_preparacion.R` | Separa republicaciones de unidades distintas, elimina las copias y agrega las variables derivadas. | `input/base_analisis.csv`, `tablas/02_*.csv` |
 | `03_graficos.R` | Los ocho gráficos de la instancia 1. | `graficos/g1` a `g8`, `tablas/03_*.csv` |
-| `04_tablas.R` | Las tablas descriptivas de la instancia 1. | `tablas/04_*.csv` |
+| `04_tablas.R` | Las tablas descriptivas de la instancia 1, y la ficha de la base y las variables como imagen para la presentación final. | `tablas/04_*.csv`, `tablas/t19` y `t20` |
 | `05_presentacion.R` | Borrador de la presentación de la instancia 1, armado desde R. No es la entrega: la presentación se editó después a mano. | `graficos/borrador_desde_R.pptx` |
 | `06_faltantes_outliers.R` | Faltantes y atípicos: tres reglas en dos escalas, estrategias y su impacto. Agrega las marcas a la base de análisis. | `input/base_analisis.csv`, `graficos/g09a` a `g11`, `tablas/t01` a `t04` |
 | `07_devolucion.R` | Las correcciones de la devolución de la instancia 1: descriptivas completas, avisos por barrio, correlaciones y PCA de cercanía. | `graficos/g12` a `g14`, `tablas/07_*`, `t05` a `t09` |

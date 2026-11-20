@@ -24,7 +24,7 @@ t01_faltantes.png,Variables con datos faltantes
 t02_tres_reglas.png,"Avisos marcados como atípicos, por regla, escala y variable"
 t03_impacto_estrategias.png,Qué le pasa a la base con cada estrategia para los atípicos
 t04_no_departamentos.png,Avisos que no son departamentos
-t05_descriptivas_vivienda.png,Estadísticas descriptivas de las variables de la vivienda
+t05_descriptivas_vivienda.png,Estadísticas descriptivas de las variables del departamento
 t06_descriptivas_entorno.png,Estadísticas descriptivas de las variables de entorno
 t07_avisos_por_barrio.png,"Avisos por barrio, con su porcentaje"
 t08_pca_cargas.png,Cargas del PCA de las variables de cercanía
@@ -38,5 +38,7 @@ t15_cook.png,Coeficientes con y sin los avisos influyentes
 t16_perfiles_grupos.png,Perfil de los tres tipos de departamento
 t17_estabilidad_grupos.png,Estabilidad de los tipos de departamento: índice de Rand ajustado
 t18_comuna_grupos.png,Composición de cada comuna según los tres tipos de departamento
+t19_ficha_base.png,Ficha de la base
+t20_variables.png,Variables del departamento · Variables de ubicación
 grupo_08_exploratorio_diapositiva.jpg,Agrupamiento jerárquico de los barrios según los tipos de departamento que publican
 grupo_08_comunicativo_diapositiva.jpg,Precio y superficie de los avisos: Puerto Madero y Villa Lugano
