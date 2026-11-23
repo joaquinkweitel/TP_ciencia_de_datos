@@ -17,7 +17,7 @@ Los resultados la apoyan y la reformulan. La apoyan: a igual departamento, el pr
 
 ## 2. La base de datos y por qué la elegimos
 
-Avisos de venta de departamentos de MercadoLibre Argentina, relevados en noviembre de 2024: 40.168 avisos en la base cruda y 39.305 después de quitar las republicaciones, distribuidos en los 48 barrios de la ciudad. Los modelos trabajan sobre 38.895 avisos en los 42 barrios con al menos 100 publicaciones.
+Avisos de venta de departamentos de MercadoLibre Argentina, relevados en noviembre de 2024: 40.168 avisos en la base cruda y 39.305 después de quitar las republicaciones, distribuidos en los 48 barrios de la ciudad. Los modelos trabajan sobre 38.895 avisos: los de los 42 barrios con al menos 100 publicaciones, sin los 40 avisos que no son departamentos.
 
 La elegimos porque reúne en una misma fila el precio, las características del departamento y la ubicación —barrio, comuna y coordenadas—, que es exactamente lo que hace falta para separar el peso de una cosa del peso de la otra. Y porque tiene avisos suficientes para comparar barrios entre sí con cierta solidez.
 
